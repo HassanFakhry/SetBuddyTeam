@@ -3,21 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SetBuddy AI — Team Policy</title>
+<title>SetBuddy AI — Join the Team</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #0a0a0b;
     --surface: #111113;
+    --surface-2: #18181b;
     --border: #1e1e22;
+    --border-hover: #2a2a30;
     --text: #e4e4e7;
     --muted: #71717a;
     --accent: #3b82f6;
     --accent-dim: #1d4ed8;
     --accent-glow: rgba(59, 130, 246, 0.12);
+    --accent-glow-strong: rgba(59, 130, 246, 0.25);
     --green: #22c55e;
     --orange: #f59e0b;
-    --red: #ef4444;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -39,8 +41,9 @@
     z-index: 9999;
   }
 
+  /* ---- HERO ---- */
   .hero {
-    padding: 80px 24px 60px;
+    padding: 100px 24px 80px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -49,7 +52,293 @@
   .hero::before {
     content: '';
     position: absolute;
-    top: -200px;
+    top: -300px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, var(--accent-glow-strong) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-glow);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+    letter-spacing: 0.5px;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 6vw, 56px);
+    font-weight: 700;
+    letter-spacing: -2px;
+    line-height: 1.08;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 span {
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    color: var(--muted);
+    font-size: 17px;
+    max-width: 520px;
+    margin: 0 auto 36px;
+    line-height: 1.6;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--accent);
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .hero-cta:hover {
+    background: var(--accent-dim);
+    transform: translateY(-1px);
+  }
+
+  .hero-secondary {
+    display: inline-block;
+    font-size: 14px;
+    color: var(--muted);
+    margin-left: 16px;
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1px;
+    transition: color 0.2s;
+  }
+
+  .hero-secondary:hover { color: var(--text); }
+
+  /* ---- STATS ---- */
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    padding: 48px 24px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -1px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* ---- SECTIONS ---- */
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .content-section {
+    padding: 72px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .content-section:last-of-type {
+    border-bottom: none;
+  }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .content-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .content-section p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .content-section p:last-child { margin-bottom: 0; }
+
+  /* ---- WHY JOIN CARDS ---- */
+  .perks-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .perk {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    transition: border-color 0.2s;
+  }
+
+  .perk:hover { border-color: var(--border-hover); }
+
+  .perk-icon {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .perk h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .perk p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+    margin-bottom: 0;
+  }
+
+  /* ---- ROLES ---- */
+  .roles {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .role {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    transition: border-color 0.2s;
+  }
+
+  .role:hover { border-color: rgba(59, 130, 246, 0.25); }
+
+  .role-info { flex: 1; }
+
+  .role h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .role p {
+    font-size: 13.5px;
+    color: var(--muted);
+    margin-bottom: 0;
+    line-height: 1.55;
+  }
+
+  .role-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .tag-eng { background: rgba(59, 130, 246, 0.1); color: var(--accent); border: 1px solid rgba(59, 130, 246, 0.2); }
+  .tag-research { background: rgba(34, 197, 94, 0.1); color: var(--green); border: 1px solid rgba(34, 197, 94, 0.2); }
+  .tag-marketing { background: rgba(245, 158, 11, 0.1); color: var(--orange); border: 1px solid rgba(245, 158, 11, 0.2); }
+  .tag-hiring { background: rgba(168, 85, 247, 0.1); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.2); }
+  .tag-hiring { background: rgba(168, 85, 247, 0.1); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.2); }
+
+  /* ---- HOW WE WORK ---- */
+  .policy-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .policy-list li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-size: 14px;
+    color: #b4b4bc;
+    line-height: 1.6;
+  }
+
+  .highlight { color: var(--text); font-weight: 500; }
+
+  /* ---- TECH STACK ---- */
+  .stack-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .stack-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    padding: 6px 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--muted);
+  }
+
+  /* ---- CTA ---- */
+  .cta-section {
+    text-align: center;
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    bottom: -200px;
     left: 50%;
     transform: translateX(-50%);
     width: 600px;
@@ -58,247 +347,195 @@
     pointer-events: none;
   }
 
-  .logo {
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 24px;
-    font-family: 'JetBrains Mono', monospace;
-  }
-
-  h1 {
-    font-size: clamp(32px, 5vw, 48px);
+  .cta-section h2 {
+    font-size: 32px;
     font-weight: 700;
-    letter-spacing: -1.5px;
-    line-height: 1.1;
-    margin-bottom: 16px;
-  }
-
-  .subtitle {
-    color: var(--muted);
-    font-size: 15px;
-    font-family: 'JetBrains Mono', monospace;
-  }
-
-  .container {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 0 24px 120px;
-  }
-
-  .section {
-    margin-bottom: 48px;
-    animation: fadeUp 0.6s ease both;
-  }
-
-  .section:nth-child(1) { animation-delay: 0.1s; }
-  .section:nth-child(2) { animation-delay: 0.15s; }
-  .section:nth-child(3) { animation-delay: 0.2s; }
-  .section:nth-child(4) { animation-delay: 0.25s; }
-  .section:nth-child(5) { animation-delay: 0.3s; }
-  .section:nth-child(6) { animation-delay: 0.35s; }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .section-number {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--accent);
-    background: var(--accent-glow);
-    border: 1px solid rgba(59, 130, 246, 0.2);
-    padding: 4px 10px;
-    border-radius: 4px;
-    flex-shrink: 0;
-  }
-
-  h2 {
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: -0.5px;
-  }
-
-  .section p {
-    color: var(--muted);
-    font-size: 15px;
-    margin-bottom: 16px;
-  }
-
-  .policy-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .policy-list li {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 16px 20px;
-    font-size: 14.5px;
-    color: #b4b4bc;
-    line-height: 1.65;
-    transition: border-color 0.2s;
-  }
-
-  .policy-list li:hover {
-    border-color: rgba(59, 130, 246, 0.25);
-  }
-
-  .ordered-list {
-    list-style: none;
-    counter-reset: steps;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .ordered-list li {
-    counter-increment: steps;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 16px 20px 16px 56px;
-    font-size: 14.5px;
-    color: #b4b4bc;
-    line-height: 1.65;
-    position: relative;
-    transition: border-color 0.2s;
-  }
-
-  .ordered-list li:hover {
-    border-color: rgba(59, 130, 246, 0.25);
-  }
-
-  .ordered-list li::before {
-    content: counter(steps);
-    position: absolute;
-    left: 20px;
-    top: 16px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--accent);
-  }
-
-  .tag {
-    display: inline-block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    padding: 2px 8px;
-    border-radius: 3px;
-    font-weight: 500;
-    vertical-align: middle;
-    margin-left: 4px;
-  }
-
-  .tag-standard { background: rgba(34, 197, 94, 0.1); color: var(--green); border: 1px solid rgba(34, 197, 94, 0.2); }
-  .tag-urgent { background: rgba(245, 158, 11, 0.1); color: var(--orange); border: 1px solid rgba(245, 158, 11, 0.2); }
-
-  .apply-section {
-    text-align: center;
-    padding: 48px 24px;
-    max-width: 680px;
-    margin: 0 auto;
-    border-top: 1px solid var(--border);
-  }
-
-  .apply-section h2 {
-    font-size: 24px;
+    letter-spacing: -1px;
     margin-bottom: 12px;
   }
 
-  .apply-section p {
+  .cta-section p {
     color: var(--muted);
     font-size: 15px;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
   }
 
-  .apply-btn {
+  .cta-btn {
     display: inline-block;
     font-family: 'Instrument Sans', sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
     color: #fff;
     background: var(--accent);
-    padding: 14px 36px;
+    padding: 16px 40px;
     border-radius: 8px;
     text-decoration: none;
     transition: background 0.2s, transform 0.2s;
   }
 
-  .apply-btn:hover {
+  .cta-btn:hover {
     background: var(--accent-dim);
     transform: translateY(-1px);
   }
 
+  /* ---- FOOTER ---- */
   .footer {
     text-align: center;
-    padding: 40px 24px;
+    padding: 32px 24px;
     border-top: 1px solid var(--border);
-    max-width: 680px;
-    margin: 0 auto;
   }
 
   .footer p {
     color: var(--muted);
-    font-size: 13px;
+    font-size: 12px;
     font-family: 'JetBrains Mono', monospace;
-    line-height: 1.8;
   }
 
-  .highlight {
-    color: var(--text);
-    font-weight: 500;
+  .footer a {
+    color: var(--accent);
+    text-decoration: none;
   }
 
-  @media (max-width: 520px) {
-    .hero { padding: 60px 20px 40px; }
-    .container { padding: 0 16px 80px; }
-    .policy-list li, .ordered-list li { padding: 14px 16px; font-size: 14px; }
-    .ordered-list li { padding-left: 48px; }
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 560px) {
+    .hero { padding: 72px 20px 56px; }
+    .stats { gap: 28px; }
+    .stat-number { font-size: 22px; }
+    .perks-grid { grid-template-columns: 1fr; }
+    .role { flex-direction: column; gap: 10px; }
+    .hero-secondary { display: block; margin: 16px auto 0; }
   }
 </style>
 </head>
 <body>
 <div class="grain"></div>
 
+<!-- HERO -->
 <div class="hero">
-  <div class="logo">SetBuddy AI</div>
-  <h1>Team Work Policy</h1>
-  <p class="subtitle">Remote Development Team &bull; Effective March 2026</p>
+  <div class="hero-badge">We're hiring — 4 open roles</div>
+  <h1>Help us build the<br><span>AI coach everyone deserves</span></h1>
+  <p class="hero-sub">SetBuddy uses AI pose detection to watch your form and tell you what to fix — in real time. We've built the prototype. Now we need a team to make it real.</p>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKmFokrMa36mESzjZ5wDr5OENixbp4PKAibIKXS-_EQ6Ea7g/viewform" target="_blank" class="hero-cta">Apply Now</a>
+  <a href="https://play.google.com/store/apps/details?id=com.setbuddy.ai" target="_blank" class="hero-secondary">View on Google Play &darr;</a>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-number">98%</div>
+    <div class="stat-label">Pose recognition accuracy</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">90%+</div>
+    <div class="stat-label">Real-time form detection</div>
+  </div>
+  <div class="stat">
+    <div class="stat-number">Live</div>
+    <div class="stat-label">On Google Play</div>
+  </div>
 </div>
 
 <div class="container">
 
-  <div class="section">
-    <div class="section-header">
-      <span class="section-number">01</span>
-      <h2>How We Work</h2>
+  <!-- WHO WE ARE -->
+  <div class="content-section">
+    <div class="section-label">Who We Are</div>
+    <h2>A small team with a shipped product</h2>
+    <p>SetBuddy AI started as a solo project — built from scratch, launched on Google Play, and demoed to a U.S. congresswoman through the Congressional App Challenge. The core tech works: film your set, and the AI analyzes your form using TensorFlow and MediaPipe pose detection.</p>
+    <p>But a prototype isn't a product. We need engineers to build out the full platform, researchers to define what "bad form" actually means biomechanically, and marketers to get it in front of the people who need it. That's where you come in.</p>
+  </div>
+
+  <!-- WHY JOIN -->
+  <div class="content-section">
+    <div class="section-label">Why Join</div>
+    <h2>What you get out of this</h2>
+    <div class="perks-grid">
+      <div class="perk">
+        <div class="perk-icon">&#9889;</div>
+        <h3>Real product experience</h3>
+        <p>Not a school project. A live app on Google Play with real users and real engineering problems to solve.</p>
+      </div>
+      <div class="perk">
+        <div class="perk-icon">&#128640;</div>
+        <h3>Ground floor</h3>
+        <p>Join early, shape the direction, and own a meaningful part of what gets built.</p>
+      </div>
+      <div class="perk">
+        <div class="perk-icon">&#129302;</div>
+        <h3>AI / ML hands-on</h3>
+        <p>Work directly with TensorFlow, MediaPipe, and pose estimation — not tutorials, real implementation.</p>
+      </div>
+      <div class="perk">
+        <div class="perk-icon">&#128196;</div>
+        <h3>Resume that stands out</h3>
+        <p>Ship features on a published app. That's worth more than any club membership.</p>
+      </div>
     </div>
+  </div>
+
+  <!-- OPEN ROLES -->
+  <div class="content-section">
+    <div class="section-label">Open Roles</div>
+    <h2>We're looking for four types of people</h2>
+    <div class="roles">
+      <div class="role">
+        <div class="role-info">
+          <h3>Software Engineer</h3>
+          <p>Build features, squash bugs, and help architect the next version of the app. Experience with React Native, Python, or mobile dev is ideal — but we care more about what you've shipped than what you list on a resume.</p>
+        </div>
+        <span class="role-tag tag-eng">Engineering</span>
+      </div>
+      <div class="role">
+        <div class="role-info">
+          <h3>Biomechanical Research</h3>
+          <p>Define the safety thresholds for exercise form detection. What angles are actually dangerous? What does "bad form" look like across different body types? You'll turn kinesiology into parameters the AI can use.</p>
+        </div>
+        <span class="role-tag tag-research">Research</span>
+      </div>
+      <div class="role">
+        <div class="role-info">
+          <h3>Marketing & Growth</h3>
+          <p>Get SetBuddy in front of lifters, coaches, and fitness communities. Create content, run social accounts, and figure out what messaging makes people actually download the app.</p>
+        </div>
+        <span class="role-tag tag-marketing">Marketing</span>
+      </div>
+      <div class="role">
+        <div class="role-info">
+          <h3>Hiring Manager</h3>
+          <p>Review applications, run interviews, and help build the team. You'll screen candidates, coordinate onboarding, and make sure we're bringing on people who actually deliver — not just people who say they're interested.</p>
+        </div>
+        <span class="role-tag tag-hiring">Operations</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TECH STACK -->
+  <div class="content-section">
+    <div class="section-label">Tech Stack</div>
+    <h2>What we're building with</h2>
+    <div class="stack-tags">
+      <span class="stack-tag">React Native</span>
+      <span class="stack-tag">TensorFlow</span>
+      <span class="stack-tag">MediaPipe</span>
+      <span class="stack-tag">Python</span>
+      <span class="stack-tag">JavaScript</span>
+      <span class="stack-tag">Node.js</span>
+      <span class="stack-tag">OpenCV</span>
+      <span class="stack-tag">Android Studio</span>
+      <span class="stack-tag">Git</span>
+    </div>
+  </div>
+
+  <!-- HOW WE WORK — FULL POLICY -->
+  <div class="content-section">
+    <div class="section-label">01 — How We Work</div>
+    <h2>Fully Remote</h2>
     <p>SetBuddy is a fully remote team. There is no office and no requirement to be in a specific location. What matters is that work gets done on time and communication stays clear.</p>
   </div>
 
-  <div class="section">
-    <div class="section-header">
-      <span class="section-number">02</span>
-      <h2>Availability & Communication</h2>
-    </div>
+  <div class="content-section">
+    <div class="section-label">02 — Availability & Communication</div>
+    <h2>Stay Reachable</h2>
     <ul class="policy-list">
       <li>Be reachable on the team's primary channel (Discord/Slack) during your committed hours. You don't need to respond instantly, but aim for <span class="highlight">within 2 hours</span> during those hours.</li>
       <li>If you're going to be unavailable for a day or more, post a heads-up in the team channel before you go offline. No explanation needed — just a timeline.</li>
@@ -306,24 +543,20 @@
     </ul>
   </div>
 
-  <div class="section">
-    <div class="section-header">
-      <span class="section-number">03</span>
-      <h2>Tasks & Deadlines</h2>
-    </div>
+  <div class="content-section">
+    <div class="section-label">03 — Tasks & Deadlines</div>
+    <h2>Ship On Time</h2>
     <ul class="policy-list">
       <li>Tasks are assigned through the project board (GitHub Projects, Notion, or whatever the team is using). Each task includes a description, priority level, and a due date.</li>
       <li>Due dates are set collaboratively. If a deadline feels unrealistic, speak up when the task is assigned — not the day it's due. Renegotiating early is fine; missing silently is not.</li>
-      <li>If you're going to miss a deadline, flag it <span class="highlight">at least 24 hours in advance</span> with a revised estimate.</li>
-      <li>Standard turnaround is <span class="tag tag-standard">3–5 days</span> for most tasks. Urgent tasks are marked and should be addressed within <span class="tag tag-urgent">24–48 hrs</span>.</li>
+      <li>If you're going to miss a deadline, flag it <span class="highlight">at least 24 hours in advance</span> with a revised estimate. Things come up — the team just needs to know so work can be redistributed.</li>
+      <li>Standard turnaround is <span class="highlight">3–5 days</span> for most tasks. Urgent tasks (marked as such) should be addressed within <span class="highlight">24–48 hours</span>.</li>
     </ul>
   </div>
 
-  <div class="section">
-    <div class="section-header">
-      <span class="section-number">04</span>
-      <h2>Code & Quality Standards</h2>
-    </div>
+  <div class="content-section">
+    <div class="section-label">04 — Code & Quality Standards</div>
+    <h2>Keep It Clean</h2>
     <ul class="policy-list">
       <li>All code goes through <span class="highlight">pull requests</span>. No direct pushes to main.</li>
       <li>PRs need at least one review before merging. Keep PRs small and focused — one feature or fix per PR.</li>
@@ -332,24 +565,20 @@
     </ul>
   </div>
 
-  <div class="section">
-    <div class="section-header">
-      <span class="section-number">05</span>
-      <h2>Accountability</h2>
-    </div>
-    <p>This is a small team. Everyone's contribution is visible and everyone's absence is felt.</p>
-    <ol class="ordered-list">
-      <li>Do what you said you'd do, by when you said you'd do it.</li>
-      <li>If you can't, communicate early.</li>
-      <li>If a pattern of missed deadlines or unresponsiveness develops, the team lead will have a direct conversation. If it continues, your role on the project will be reconsidered.</li>
-    </ol>
+  <div class="content-section">
+    <div class="section-label">05 — Accountability</div>
+    <h2>Do What You Said You'd Do</h2>
+    <p>This is a small team. Everyone's contribution is visible and everyone's absence is felt. The expectations are simple:</p>
+    <ul class="policy-list">
+      <li><span class="highlight">1.</span> Do what you said you'd do, by when you said you'd do it.</li>
+      <li><span class="highlight">2.</span> If you can't, communicate early.</li>
+      <li><span class="highlight">3.</span> If a pattern of missed deadlines or unresponsiveness develops, the team lead will have a direct conversation. If it continues, your role on the project will be reconsidered.</li>
+    </ul>
   </div>
 
-  <div class="section">
-    <div class="section-header">
-      <span class="section-number">06</span>
-      <h2>Respect & Culture</h2>
-    </div>
+  <div class="content-section">
+    <div class="section-label">06 — Respect & Culture</div>
+    <h2>Build Each Other Up</h2>
     <ul class="policy-list">
       <li>Disagree openly, but never personally. Critique the code or the idea, not the person.</li>
       <li>Everyone's time is valuable. Come to meetings prepared. Keep async messages concise.</li>
@@ -359,14 +588,16 @@
 
 </div>
 
-<div class="apply-section">
-  <h2>Want to join the team?</h2>
-  <p>We're looking for developers, designers, and builders who want to ship real products.</p>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKmFokrMa36mESzjZ5wDr5OENixbp4PKAibIKXS-_EQ6Ea7g/viewform" target="_blank" class="apply-btn">Apply to SetBuddy</a>
+<!-- CTA -->
+<div class="cta-section">
+  <h2>Ready to build something real?</h2>
+  <p>Applications are reviewed within a week. If selected, we'll reach out to schedule a short interview.</p>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKmFokrMa36mESzjZ5wDr5OENixbp4PKAibIKXS-_EQ6Ea7g/viewform" target="_blank" class="cta-btn">Apply to SetBuddy AI</a>
 </div>
 
+<!-- FOOTER -->
 <div class="footer">
-  <p>By joining the SetBuddy dev team, you agree to these expectations.<br>Questions? Bring them up in the team channel.</p>
+  <p>SetBuddy AI &bull; <a href="https://play.google.com/store/apps/details?id=com.setbuddy.ai" target="_blank">Google Play</a> &bull; Portland, OR</p>
 </div>
 
 </body>
