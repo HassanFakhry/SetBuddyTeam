@@ -234,6 +234,25 @@
     margin-top: 4px;
   }
 
+  /* ---- UNPAID NOTICE ---- */
+  .unpaid-notice {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 48px 24px;
+  }
+
+  .unpaid-notice p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .unpaid-notice p strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
   /* ---- LAYOUT ---- */
   .wide-container {
     max-width: 1080px;
@@ -374,6 +393,85 @@
 
   .roles-sidebar .hero-cta { font-size: 13px; padding: 10px 20px; }
 
+  /* ---- BADGE LEGEND ---- */
+  .badge-legend {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+
+  .badge-legend-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    user-select: none;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  .badge-legend-toggle span {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.3px;
+  }
+
+  .badge-legend-icon {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid var(--border-hover);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    flex-shrink: 0;
+    transition: border-color 0.2s;
+  }
+
+  .badge-legend-toggle:hover .badge-legend-icon {
+    border-color: var(--muted);
+  }
+
+  .badge-legend-items {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .badge-legend.open .badge-legend-items {
+    max-height: 300px;
+  }
+
+  .badge-legend-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 14px;
+  }
+
+  .badge-legend-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .badge-legend-item .badge-sample {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .badge-legend-item .badge-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
   /* ---- ROLE GROUPS ---- */
   .role-groups {
     display: flex;
@@ -477,7 +575,7 @@
   .role-item.filled .role-item-chevron { display: none; }
 
   /* ---- BADGES ---- */
-  .role-filled-badge, .role-low-slots, .role-closing, .role-new, .role-vital {
+  .role-filled-badge, .role-limited, .role-closing, .role-new, .role-vital {
     font-family: 'DM Sans', sans-serif;
     font-size: 10px;
     font-weight: 600;
@@ -495,7 +593,7 @@
     text-transform: uppercase;
   }
 
-  .role-low-slots {
+  .role-limited {
     color: #e8512d;
     background: rgba(232, 81, 45, 0.1);
     border: 1px solid rgba(232, 81, 45, 0.25);
@@ -759,6 +857,11 @@
   </div>
 </div>
 
+<!-- UNPAID NOTICE -->
+<div class="unpaid-notice">
+  <p><strong>This is a pre-revenue project.</strong> There's no paycheck yet — but the people who join now aren't filling roles, they're creating them. Your contributions won't support SetBuddy. They'll define it.</p>
+</div>
+
 <!-- WHO WE ARE -->
 <div class="wide-container">
   <div class="who-section">
@@ -821,6 +924,38 @@
         <h2>14 roles across 4 teams</h2>
         <p>Click any role to see what you'd be assigned to do. Some roles have limited availability — don't wait.</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKmFokrMa36mESzjZ5wDr5OENixbp4PKAibIKXS-_EQ6Ea7g/viewform" target="_blank" class="hero-cta">Apply Now</a>
+
+        <!-- BADGE LEGEND -->
+        <div class="badge-legend" id="badgeLegend">
+          <button class="badge-legend-toggle" onclick="document.getElementById('badgeLegend').classList.toggle('open')">
+            <div class="badge-legend-icon">?</div>
+            <span>What do the tags mean?</span>
+          </button>
+          <div class="badge-legend-items">
+            <div class="badge-legend-list">
+              <div class="badge-legend-item">
+                <span class="role-new badge-sample">New</span>
+                <span class="badge-desc">Recently added role — applications just opened.</span>
+              </div>
+              <div class="badge-legend-item">
+                <span class="role-vital badge-sample">Vital</span>
+                <span class="badge-desc">Critical to the project's progress. These are our highest-competition roles.</span>
+              </div>
+              <div class="badge-legend-item">
+                <span class="role-limited badge-sample">Limited</span>
+                <span class="badge-desc">High number of applicants. Applications stay open — the top candidates will be selected on April 12th.</span>
+              </div>
+              <div class="badge-legend-item">
+                <span class="role-closing badge-sample">Closing Soon</span>
+                <span class="badge-desc">Application window is about to close for this role.</span>
+              </div>
+              <div class="badge-legend-item">
+                <span class="role-filled-badge badge-sample">Filled</span>
+                <span class="badge-desc">This role has been filled and is no longer accepting applications.</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="role-groups">
 
@@ -860,7 +995,7 @@
                   <div class="role-item-dot dot-eng"></div>
                   <div class="role-item-name">Software Engineer</div>
                 </div>
-                <span class="role-low-slots">Limited</span>
+                <span class="role-limited">Limited</span>
                 <div class="role-item-chevron">&#x276F;</div>
               </div>
               <div class="role-item-detail">
@@ -979,7 +1114,7 @@
                   <div class="role-item-dot dot-mkt"></div>
                   <div class="role-item-name">Team Lead</div>
                 </div>
-                <span class="role-new">New</span>
+                <span class="role-limited">Limited</span>
                 <div class="role-item-chevron">&#x276F;</div>
               </div>
               <div class="role-item-detail">
@@ -1067,7 +1202,7 @@
                   <div class="role-item-dot dot-mkt"></div>
                   <div class="role-item-name">Graphic Designer</div>
                 </div>
-                <span class="role-low-slots">Limited</span>
+                <span class="role-limited">Limited</span>
                 <div class="role-item-chevron">&#x276F;</div>
               </div>
               <div class="role-item-detail">
@@ -1089,7 +1224,7 @@
                   <div class="role-item-dot dot-mkt"></div>
                   <div class="role-item-name">Editor</div>
                 </div>
-                <span class="role-low-slots">Limited</span>
+                <span class="role-limited">Limited</span>
                 <div class="role-item-chevron">&#x276F;</div>
               </div>
               <div class="role-item-detail">
@@ -1144,7 +1279,7 @@
                   <div class="role-item-dot dot-res"></div>
                   <div class="role-item-name">Research Consultant</div>
                 </div>
-                <span class="role-low-slots">Limited</span>
+                <span class="role-new">New</span>
                 <div class="role-item-chevron">&#x276F;</div>
               </div>
               <div class="role-item-detail">
