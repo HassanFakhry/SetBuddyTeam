@@ -740,49 +740,84 @@
 
   .highlight { color: var(--text); font-weight: 500; }
 
-  /* ---- CTA ---- */
-  .cta-section {
-    text-align: center;
-    padding: 100px 24px;
-    position: relative;
-    overflow: hidden;
+  /* ---- FINAL CTA SECTION ---- */
+  .final-cta {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 40px 100px;
   }
 
-  .cta-section::before {
-    content: '';
-    position: absolute;
-    bottom: -200px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-    pointer-events: none;
+  .final-cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
   }
 
-  .cta-section h2 {
+  .final-cta-left h2 {
     font-size: 36px;
     font-weight: 700;
     letter-spacing: -1px;
     margin-bottom: 12px;
   }
 
-  .cta-section p { color: var(--muted); font-size: 15px; margin-bottom: 32px; }
+  .final-cta-left p {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 32px;
+  }
 
-  .cta-btn {
+  .final-cta-left .cta-btn {
     display: inline-block;
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     color: #fff;
     background: var(--accent);
-    padding: 16px 40px;
+    padding: 14px 32px;
     border-radius: 8px;
     text-decoration: none;
     transition: background 0.2s, transform 0.2s;
   }
 
-  .cta-btn:hover { background: var(--accent-dim); transform: translateY(-1px); }
+  .final-cta-left .cta-btn:hover {
+    background: var(--accent-dim);
+    transform: translateY(-1px);
+  }
+
+  .final-cta-right {
+    border-left: 1px solid var(--border);
+    padding-left: 40px;
+  }
+
+  .final-cta-right .pay-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .final-cta-right .pay-text {
+    font-size: 13.5px;
+    color: #a1a1aa;
+    line-height: 1.7;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+
+  .final-cta-right .pay-text:last-of-type {
+    margin-bottom: 14px;
+  }
+
+  .final-cta-right .pay-sig {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+  }
 
   /* ---- FOOTER ---- */
   .footer {
@@ -805,6 +840,18 @@
     .policy-row.flipped .policy-label-col,
     .policy-row.flipped .policy-content-col { order: 0; }
     .wide-container { padding: 0 24px; }
+
+    .final-cta-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .final-cta-right {
+      border-left: none;
+      padding-left: 0;
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+    }
   }
 
   @media (max-width: 560px) {
@@ -817,6 +864,14 @@
     .role-item-header { padding: 14px 16px; }
     .role-item-detail-inner { padding: 0 16px 18px 33px; }
     .role-group-header { padding: 16px; }
+
+    .final-cta {
+      padding: 60px 20px 80px;
+    }
+
+    .final-cta-left h2 {
+      font-size: 28px;
+    }
   }
 </style>
 </head>
@@ -1400,19 +1455,19 @@
 </div>
 
 <!-- CTA -->
-<div style="max-width: 900px; margin: 0 auto; padding: 80px 40px 100px;">
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
-    <div>
-      <h2 style="font-size: 36px; font-weight: 700; letter-spacing: -1px; margin-bottom: 12px;">Ready to build something real?</h2>
-      <p style="color: var(--muted); font-size: 15px; margin-bottom: 32px;">Applications close April 12th. If selected, we'll reach out to schedule a short interview.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKmFokrMa36mESzjZ5wDr5OENixbp4PKAibIKXS-_EQ6Ea7g/viewform" target="_blank" style="display: inline-block; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; color: #fff; background: var(--accent); padding: 14px 32px; border-radius: 8px; text-decoration: none; transition: background 0.2s, transform 0.2s;">Apply to SetBuddy AI</a>
+<div class="final-cta">
+  <div class="final-cta-grid">
+    <div class="final-cta-left">
+      <h2>Ready to build something real?</h2>
+      <p>Applications close April 12th. If selected, we'll reach out to schedule a short interview.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKmFokrMa36mESzjZ5wDr5OENixbp4PKAibIKXS-_EQ6Ea7g/viewform" target="_blank" class="cta-btn">Apply to SetBuddy AI</a>
     </div>
-    <div style="border-left: 1px solid var(--border); padding-left: 40px;">
-      <p style="font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 600; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px;">A note on pay</p>
-      <p style="font-size: 13.5px; color: #a1a1aa; line-height: 1.7; margin-bottom: 10px; font-style: italic;">This is a pre-revenue project. No one's getting paid yet, including me. I don't want SetBuddy to just be a line on my resume or anyone else's. I see a real future for this product.</p>
-      <p style="font-size: 13.5px; color: #a1a1aa; line-height: 1.7; margin-bottom: 10px; font-style: italic;">The moment the app starts making money, I'll sit down with the team and we can compensate fairly.</p>
-      <p style="font-size: 13.5px; color: #a1a1aa; line-height: 1.7; margin-bottom: 14px; font-style: italic;">If you're asking about pay, that actually makes me happy. It means you see the vision too. Reach out to me directly and I can walk you through the plan.</p>
-      <p style="font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; color: var(--text);">- Hassan Fakhry</p>
+    <div class="final-cta-right">
+      <p class="pay-label">A note on pay</p>
+      <p class="pay-text">This is a pre-revenue project. No one's getting paid yet, including me. I don't want SetBuddy to just be a line on my resume or anyone else's. I see a real future for this product.</p>
+      <p class="pay-text">The moment the app starts making money, I'll sit down with the team and we can compensate fairly.</p>
+      <p class="pay-text">If you're asking about pay, that actually makes me happy. It means you see the vision too. Reach out to me directly and I can walk you through the plan.</p>
+      <p class="pay-sig">- Hassan Fakhry</p>
     </div>
   </div>
 </div>
