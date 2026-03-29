@@ -42,7 +42,6 @@
     z-index: 9999;
   }
 
-  /* ---- DEADLINE BANNER ---- */
   .deadline-banner {
     position: sticky;
     top: 0;
@@ -107,7 +106,6 @@
 
   .deadline-banner a:hover { opacity: 0.9; }
 
-  /* ---- HERO ---- */
   .hero {
     padding: 120px 24px 100px;
     text-align: center;
@@ -200,7 +198,6 @@
 
   .hero-secondary:hover { color: var(--text); }
 
-  /* ---- STATS ---- */
   .stats {
     display: flex;
     justify-content: center;
@@ -234,7 +231,6 @@
     margin-top: 4px;
   }
 
-  /* ---- UNPAID NOTICE ---- */
   .unpaid-notice {
     max-width: 640px;
     margin: 0 auto;
@@ -253,7 +249,6 @@
     font-weight: 600;
   }
 
-  /* ---- LAYOUT ---- */
   .wide-container {
     max-width: 1080px;
     margin: 0 auto;
@@ -277,7 +272,6 @@
     margin: 0 auto;
   }
 
-  /* ---- WHO WE ARE (side-by-side) ---- */
   .who-section { padding: 80px 0; }
 
   .who-grid {
@@ -324,7 +318,6 @@
     margin-bottom: 12px;
   }
 
-  /* ---- WHY JOIN (4-col) ---- */
   .why-section { padding: 80px 0; }
 
   .why-header {
@@ -361,7 +354,6 @@
   .perk h3 { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
   .perk p { font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 0; }
 
-  /* ---- OPEN ROLES (sidebar + roles) ---- */
   .roles-section { padding: 80px 0; }
 
   .roles-layout {
@@ -393,7 +385,6 @@
 
   .roles-sidebar .hero-cta { font-size: 13px; padding: 10px 20px; }
 
-  /* ---- BADGE LEGEND ---- */
   .badge-legend {
     margin-top: 24px;
     padding-top: 20px;
@@ -472,7 +463,6 @@
     line-height: 1.5;
   }
 
-  /* ---- ROLE GROUPS ---- */
   .role-groups {
     display: flex;
     flex-direction: column;
@@ -522,6 +512,30 @@
     border-radius: 10px;
   }
 
+  /* Research explainer */
+  .role-group-explainer {
+    padding: 14px 24px 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .role-group-explainer p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .role-group-explainer .explainer-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--green);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
   .role-group-roles { display: flex; flex-direction: column; }
 
   .role-item {
@@ -553,6 +567,12 @@
 
   .role-item-name { font-size: 14.5px; font-weight: 600; }
 
+  .role-item-req {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
   .role-item-chevron {
     font-size: 13px;
     color: var(--muted);
@@ -574,7 +594,6 @@
   .role-item.filled:hover { background: transparent; }
   .role-item.filled .role-item-chevron { display: none; }
 
-  /* ---- BADGES ---- */
   .role-filled-badge, .role-limited, .role-closing, .role-new, .role-vital {
     font-family: 'DM Sans', sans-serif;
     font-size: 10px;
@@ -658,7 +677,6 @@
     color: var(--muted);
   }
 
-  /* ---- TECH + HOW WE WORK (two-col) ---- */
   .tech-work-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -693,7 +711,6 @@
     color: var(--muted);
   }
 
-  /* ---- POLICY (alternating rows) ---- */
   .policy-sections { padding: 0 0 80px; }
 
   .policy-row {
@@ -740,7 +757,6 @@
 
   .highlight { color: var(--text); font-weight: 500; }
 
-  /* ---- FINAL CTA SECTION ---- */
   .final-cta {
     max-width: 900px;
     margin: 0 auto;
@@ -819,7 +835,6 @@
     color: var(--text);
   }
 
-  /* ---- FOOTER ---- */
   .footer {
     text-align: center;
     padding: 32px 24px;
@@ -829,7 +844,6 @@
   .footer p { color: var(--muted); font-size: 12px; font-family: 'DM Sans', sans-serif; }
   .footer a { color: var(--accent); text-decoration: none; }
 
-  /* ---- RESPONSIVE ---- */
   @media (max-width: 860px) {
     .who-grid { grid-template-columns: 1fr; gap: 32px; }
     .perks-grid { grid-template-columns: 1fr 1fr; }
@@ -840,18 +854,8 @@
     .policy-row.flipped .policy-label-col,
     .policy-row.flipped .policy-content-col { order: 0; }
     .wide-container { padding: 0 24px; }
-
-    .final-cta-grid {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-
-    .final-cta-right {
-      border-left: none;
-      padding-left: 0;
-      border-top: 1px solid var(--border);
-      padding-top: 32px;
-    }
+    .final-cta-grid { grid-template-columns: 1fr; gap: 40px; }
+    .final-cta-right { border-left: none; padding-left: 0; border-top: 1px solid var(--border); padding-top: 32px; }
   }
 
   @media (max-width: 560px) {
@@ -864,28 +868,21 @@
     .role-item-header { padding: 14px 16px; }
     .role-item-detail-inner { padding: 0 16px 18px 33px; }
     .role-group-header { padding: 16px; }
-
-    .final-cta {
-      padding: 60px 20px 80px;
-    }
-
-    .final-cta-left h2 {
-      font-size: 28px;
-    }
+    .role-group-explainer { padding: 12px 16px 14px; }
+    .final-cta { padding: 60px 20px 80px; }
+    .final-cta-left h2 { font-size: 28px; }
   }
 </style>
 </head>
 <body>
 <div class="grain"></div>
 
-<!-- DEADLINE BANNER -->
 <div class="deadline-banner">
   <div class="deadline-banner-dot"></div>
   <p>Applications close <span>April 12, 2026</span> — <span id="countdown"></span> left</p>
   <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKmFokrMa36mESzjZ5wDr5OENixbp4PKAibIKXS-_EQ6Ea7g/viewform" target="_blank">Apply Now</a>
 </div>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-badge">We're hiring — 14 open roles across 4 teams</div>
   <h1>Help us build the<br><span>AI coach everyone deserves</span></h1>
@@ -896,7 +893,6 @@
   </div>
 </div>
 
-<!-- STATS -->
 <div class="stats">
   <div class="stat">
     <div class="stat-number">98%</div>
@@ -912,7 +908,6 @@
   </div>
 </div>
 
-<!-- WHO WE ARE -->
 <div class="wide-container">
   <div class="who-section">
     <div class="section-label">Who We Are</div>
@@ -931,7 +926,6 @@
 
 <hr class="section-divider">
 
-<!-- WHY JOIN -->
 <div class="wide-container">
   <div class="why-section">
     <div class="why-header">
@@ -965,7 +959,6 @@
 
 <hr class="section-divider">
 
-<!-- OPEN ROLES -->
 <div class="wide-container">
   <div class="roles-section">
     <div class="section-label">Open Roles</div>
@@ -975,7 +968,6 @@
         <p>Click any role to see what you'd be assigned to do. Some roles have limited availability — don't wait.</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKmFokrMa36mESzjZ5wDr5OENixbp4PKAibIKXS-_EQ6Ea7g/viewform" target="_blank" class="hero-cta">Apply Now</a>
 
-        <!-- BADGE LEGEND -->
         <div class="badge-legend" id="badgeLegend">
           <button class="badge-legend-toggle" onclick="document.getElementById('badgeLegend').classList.toggle('open')">
             <div class="badge-legend-icon">?</div>
@@ -1293,31 +1285,38 @@
           </div>
         </div>
 
-        <!-- RESEARCH -->
+        <!-- RESEARCH — with explainer -->
         <div class="role-group">
           <div class="role-group-header">
             <div class="role-group-icon res">&#128300;</div>
             <div class="role-group-title">Research</div>
             <div class="role-group-count">2 roles</div>
           </div>
+          <div class="role-group-explainer">
+            <div class="explainer-label">What does Research actually do?</div>
+            <p>You get assigned an exercise (e.g. squat, deadlift). You research what any form issues are for that exercise, then define the angle thresholds that flag each issue — like "if arm angle > 80°, flag as critical." You classify each issue as critical, moderate, or minor, write a short message explaining how to fix it, and link a video tutorial. Research Consultants work in pairs and submit their findings to a Google Doc. The Team Lead — who needs to be a software engineer — takes those findings and puts the code into the actual codebase. New exercises get added every 1–2 weeks.</p>
+          </div>
           <div class="role-group-roles">
             <div class="role-item" onclick="toggleRole(this)">
               <div class="role-item-header">
                 <div class="role-item-left">
                   <div class="role-item-dot dot-res"></div>
-                  <div class="role-item-name">Team Lead (Research)</div>
+                  <div>
+                    <div class="role-item-name">Team Lead (Research)</div>
+                    <div class="role-item-req">Requires software engineering experience</div>
+                  </div>
                 </div>
                 <span class="role-closing">Closing Soon</span>
                 <div class="role-item-chevron">&#x276F;</div>
               </div>
               <div class="role-item-detail">
                 <div class="role-item-detail-inner">
-                  <p>You lead the research effort that defines what "good form" and "bad form" actually mean — biomechanically and algorithmically. Your work directly shapes what the AI detects and flags.</p>
+                  <p>You lead the research effort and are responsible for putting the final code into the codebase. This role requires software engineering experience — you're the one translating the consultants' findings into working detection logic.</p>
                   <ul>
+                    <li>Take the research submissions from Consultant pairs and implement them as code in the pose detection pipeline</li>
                     <li>Define the biomechanical parameters for each supported exercise — joint angles, thresholds, and risk zones</li>
                     <li>Review academic literature on exercise science, kinesiology, and injury prevention to inform the model</li>
-                    <li>Coordinate with the Research Consultant to validate findings and ensure accuracy across body types</li>
-                    <li>Translate research outputs into specs the Software team can implement in the pose detection pipeline</li>
+                    <li>Coordinate with Research Consultant pairs to validate findings and ensure accuracy across body types</li>
                     <li>Present research findings at weekly check-ins and flag any areas where data is insufficient</li>
                   </ul>
                 </div>
@@ -1334,13 +1333,13 @@
               </div>
               <div class="role-item-detail">
                 <div class="role-item-detail-inner">
-                  <p>You provide specialized biomechanical and kinesiology expertise to validate the research team's work. You ensure the form detection parameters are grounded in real science, not guesswork.</p>
+                  <p>You work in a pair with one other consultant. Together, you get assigned an exercise each week, research the form issues, and submit your findings to a Google Doc. No coding experience needed — the Team Lead handles the code side.</p>
                   <ul>
-                    <li>Review and validate the joint angle thresholds and safety parameters defined by the Research Lead</li>
+                    <li>Work with your partner to research any form issues for each assigned exercise</li>
+                    <li>Define joint angle thresholds and classify each issue as critical, moderate, or minor</li>
+                    <li>Write a short fix-it message for each issue and link a video tutorial showing proper form</li>
+                    <li>Submit findings to a shared Google Doc for the Team Lead to review and implement</li>
                     <li>Advise on edge cases — how form standards vary across body types, mobility levels, and experience</li>
-                    <li>Provide feedback on whether the AI's form assessments align with accepted exercise science</li>
-                    <li>Suggest additional exercises or movements to add to the detection library based on demand and risk</li>
-                    <li>Be available for async consultations and attend check-ins when research items are on the agenda</li>
                   </ul>
                 </div>
               </div>
@@ -1355,7 +1354,6 @@
 
 <hr class="section-divider">
 
-<!-- TECH STACK + HOW WE WORK -->
 <div class="wide-container">
   <div class="tech-work-grid">
     <div class="tech-col">
@@ -1390,7 +1388,6 @@
 
 <hr class="section-divider">
 
-<!-- POLICY SECTIONS -->
 <div class="wide-container">
   <div class="policy-sections">
     <div class="policy-row">
@@ -1454,7 +1451,6 @@
   </div>
 </div>
 
-<!-- CTA -->
 <div class="final-cta">
   <div class="final-cta-grid">
     <div class="final-cta-left">
@@ -1472,7 +1468,6 @@
   </div>
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
   <p>SetBuddy AI &bull; <a href="https://play.google.com/store/apps/details?id=com.hassanfak.setbuddy" target="_blank">Google Play</a> &bull; Portland, OR</p>
 </div>
