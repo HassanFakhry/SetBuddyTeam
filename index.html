@@ -46,7 +46,8 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: linear-gradient(90deg, #dc2626 0%, #b91c1c 100%);
+    background: linear-gradient(90deg, #18181b 0%, #1e1e22 100%);
+    border-bottom: 1px solid #2a2a30;
     text-align: center;
     padding: 10px 24px;
     display: flex;
@@ -66,7 +67,7 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #fff;
+    background: #f97316;
     animation: blink-dot 1.4s ease-in-out infinite;
     flex-shrink: 0;
   }
@@ -94,8 +95,8 @@
     font-family: 'DM Sans', sans-serif;
     font-size: 11px;
     font-weight: 700;
-    color: #dc2626;
-    background: #fff;
+    color: #fff;
+    background: #f97316;
     padding: 4px 12px;
     border-radius: 4px;
     text-decoration: none;
@@ -512,7 +513,6 @@
     border-radius: 10px;
   }
 
-  /* Research explainer */
   .role-group-explainer {
     padding: 14px 24px 16px;
     border-bottom: 1px solid var(--border);
@@ -594,7 +594,7 @@
   .role-item.filled:hover { background: transparent; }
   .role-item.filled .role-item-chevron { display: none; }
 
-  .role-filled-badge, .role-limited, .role-closing, .role-new, .role-vital {
+  .role-filled-badge, .role-limited, .role-closing, .role-new, .role-vital, .role-waitlist {
     font-family: 'DM Sans', sans-serif;
     font-size: 10px;
     font-weight: 600;
@@ -635,6 +635,12 @@
     color: #8b8cf8;
     background: rgba(139, 140, 248, 0.1);
     border: 1px solid rgba(139, 140, 248, 0.2);
+  }
+
+  .role-waitlist {
+    color: var(--accent);
+    background: var(--accent-glow);
+    border: 1px solid rgba(249, 115, 22, 0.25);
   }
 
   @keyframes pulse-urgency {
@@ -844,6 +850,158 @@
   .footer p { color: var(--muted); font-size: 12px; font-family: 'DM Sans', sans-serif; }
   .footer a { color: var(--accent); text-decoration: none; }
 
+  /* ── Team Page (full-page view) ── */
+  .team-page {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    z-index: 10000;
+    overflow: hidden;
+  }
+
+  .team-page-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+  }
+
+  .team-soon-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, var(--accent-glow-strong) 0%, transparent 60%);
+    pointer-events: none;
+    animation: team-glow-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes team-glow-pulse {
+    0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
+  }
+
+  .team-soon-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(56px, 10vw, 120px);
+    font-weight: 700;
+    letter-spacing: -3px;
+    color: var(--text);
+    position: relative;
+    z-index: 1;
+    animation: team-shake 0.12s linear infinite;
+    user-select: none;
+    cursor: default;
+    margin-top: 12px;
+  }
+
+  .team-soon-text span { color: var(--accent); }
+
+  @keyframes team-shake {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    10%  { transform: translate(-1px, -1px) rotate(-0.3deg); }
+    20%  { transform: translate(1px, 0px) rotate(0.3deg); }
+    30%  { transform: translate(0px, 1px) rotate(0deg); }
+    40%  { transform: translate(-1px, 0px) rotate(0.3deg); }
+    50%  { transform: translate(1px, -1px) rotate(-0.3deg); }
+    60%  { transform: translate(-1px, 1px) rotate(0deg); }
+    70%  { transform: translate(1px, 0px) rotate(-0.3deg); }
+    80%  { transform: translate(0px, -1px) rotate(0.3deg); }
+    90%  { transform: translate(-1px, 0px) rotate(0deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+  }
+
+  .team-soon-sub {
+    font-size: 15px;
+    color: var(--muted);
+    margin-top: 16px;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.3px;
+  }
+
+  .team-back-link {
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+    z-index: 10001;
+  }
+
+  .team-back-link:hover { color: var(--text); }
+  .team-back-arrow { font-size: 16px; transition: transform 0.2s; }
+  .team-back-link:hover .team-back-arrow { transform: translateX(-3px); }
+
+  .team-page-footer {
+    position: absolute;
+    bottom: 32px;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  .team-page-footer p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .team-page-footer a { color: var(--accent); text-decoration: none; }
+
+  .team-nav-link { color: var(--muted); transition: color 0.2s; }
+  .team-nav-link:hover { color: var(--text); }
+
+  .waitlist-notice {
+    background: var(--surface);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .waitlist-notice-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .waitlist-notice-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .waitlist-notice p {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .waitlist-update-note {
+    margin-top: 10px !important;
+    font-size: 11.5px !important;
+    color: #52525b !important;
+    font-style: italic;
+  }
+
   @media (max-width: 860px) {
     .who-grid { grid-template-columns: 1fr; gap: 32px; }
     .perks-grid { grid-template-columns: 1fr 1fr; }
@@ -890,6 +1048,7 @@
   <div class="hero-actions">
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKmFokrMa36mESzjZ5wDr5OENixbp4PKAibIKXS-_EQ6Ea7g/viewform" target="_blank" class="hero-cta">Apply Now</a>
     <a href="https://play.google.com/store/apps/details?id=com.hassanfak.setbuddy" target="_blank" class="hero-secondary">View on Google Play &darr;</a>
+    <a href="#team" class="hero-secondary">Meet the Team &rarr;</a>
   </div>
 </div>
 
@@ -914,7 +1073,7 @@
     <div class="who-grid">
       <div class="who-left">
         <h2>A small team with a shipped product</h2>
-        <p>SetBuddy AI started as a duo project between me and Sherjil Khan — built from scratch, launched on Google Play, and demoed to a U.S. congresswoman through the Congressional App Challenge. The core tech works: film your set, and the AI analyzes your form using TensorFlow and MediaPipe pose detection.</p>
+        <p>SetBuddy AI started as a duo project between Hassan Fakhry and Sherjil Khan — built from scratch, launched on Google Play, and demoed to a U.S. congresswoman through the Congressional App Challenge. The core tech works: film your set, and the AI analyzes your form using TensorFlow and MediaPipe pose detection.</p>
       </div>
       <div class="who-right">
         <div class="who-right-label">What's Next</div>
@@ -961,6 +1120,14 @@
 
 <div class="wide-container">
   <div class="roles-section">
+    <div class="waitlist-notice" id="waitlistNotice" style="display:none;">
+      <div class="waitlist-notice-icon">&#128203;</div>
+      <div class="waitlist-notice-content">
+        <div class="waitlist-notice-title">How the waitlist works</div>
+        <p>The founding team has been selected. You can still apply for any role — if your application meets our bar, you'll be added to the waitlist. Being waitlisted doesn't guarantee a position. It means that when a spot opens up, we'll look at the waitlist and pick the strongest fit. Think of it as staying on our radar.</p>
+        <p class="waitlist-update-note">Waitlist numbers updated every Sunday at 10 PM PST.</p>
+      </div>
+    </div>
     <div class="section-label">Open Roles</div>
     <div class="roles-layout">
       <div class="roles-sidebar">
@@ -1285,7 +1452,7 @@
           </div>
         </div>
 
-        <!-- RESEARCH — with explainer -->
+        <!-- RESEARCH -->
         <div class="role-group">
           <div class="role-group-header">
             <div class="role-group-icon res">&#128300;</div>
@@ -1468,39 +1635,191 @@
   </div>
 </div>
 
-<div class="footer">
-  <p>SetBuddy AI &bull; <a href="https://play.google.com/store/apps/details?id=com.hassanfak.setbuddy" target="_blank">Google Play</a> &bull; Portland, OR</p>
+<div class="footer" id="mainFooter">
+  <p>SetBuddy AI &bull; <a href="https://play.google.com/store/apps/details?id=com.hassanfak.setbuddy" target="_blank">Google Play</a> &bull; <a href="#team" class="team-nav-link">Meet the Team</a> &bull; Portland, OR</p>
+</div>
+
+<!-- TEAM PAGE (hidden by default, shown when URL hash is #team) -->
+<div id="teamPage" class="team-page" style="display:none;">
+  <div class="grain"></div>
+  <a href="#" class="team-back-link">
+    <span class="team-back-arrow">&larr;</span> Back to roles
+  </a>
+  <div class="team-page-inner">
+    <div class="team-soon-glow"></div>
+    <div class="section-label" style="text-align:center;position:relative;z-index:1;">Meet the Team</div>
+    <div class="team-soon-text">Soon<span>...</span></div>
+    <p class="team-soon-sub">The founding team is being assembled.</p>
+  </div>
+  <div class="team-page-footer">
+    <p>SetBuddy AI &bull; <a href="https://play.google.com/store/apps/details?id=com.hassanfak.setbuddy" target="_blank">Google Play</a> &bull; Portland, OR</p>
+  </div>
 </div>
 
 <script>
 function toggleRole(el) {
+  if (el.classList.contains('filled')) return;
   el.classList.toggle('open');
 }
 
+const DEADLINE = new Date('2026-04-12T23:59:59');
+
+function isDeadlinePassed() {
+  return new Date() >= DEADLINE;
+}
+
+// ── Update these numbers as people get waitlisted ──
+var waitlistCounts = {
+  'Software Engineer': 0,
+  'Project Co-Lead': 0,
+  'Interviewer': 0,
+  'Scouter': 0,
+  'Team Lead': 0,
+  'Scriptor': 0,
+  'Outreach': 0,
+  'Videographer': 0,
+  'Graphic Designer': 0,
+  'Editor': 0,
+  'Team Lead (Research)': 0,
+  'Research Consultant': 0
+};
+
 function updateCountdown() {
-  const deadline = new Date('2026-04-12T23:59:59');
   const now = new Date();
-  const diff = deadline - now;
+  const diff = DEADLINE - now;
+  const el = document.getElementById('countdown');
+
   if (diff <= 0) {
-    document.getElementById('countdown').textContent = 'Closed';
+    switchToWaitlistMode();
     return;
   }
+
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
   const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   if (days > 0) {
-    document.getElementById('countdown').textContent = days + 'd ' + hours + 'h';
+    el.textContent = days + 'd ' + hours + 'h';
   } else {
     const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    document.getElementById('countdown').textContent = hours + 'h ' + mins + 'm';
+    el.textContent = hours + 'h ' + mins + 'm';
   }
 }
-updateCountdown();
-setInterval(updateCountdown, 60000);
 
-let lastScroll = 0;
-const banner = document.querySelector('.deadline-banner');
-window.addEventListener('scroll', () => {
-  const current = window.scrollY;
+function switchToWaitlistMode() {
+  // ── Waitlist counts per role ──
+  // Update these numbers as people get waitlisted.
+  // Use a number (e.g. 8) or 'TBD' for undetermined.
+  var waitlistCounts = {
+    'Software Engineer': 'TBD',
+    'Project Co-Lead': 'TBD',
+    'Interviewer': 'TBD',
+    'Scouter': 'TBD',
+    'Team Lead': 'TBD',
+    'Scriptor': 'TBD',
+    'Outreach': 'TBD',
+    'Videographer': 'TBD',
+    'Graphic Designer': 'TBD',
+    'Editor': 'TBD',
+    'Team Lead (Research)': 'TBD',
+    'Research Consultant': 'TBD',
+  };
+
+  // 1. Banner — update text for waitlist messaging
+  var banner = document.querySelector('.deadline-banner');
+  var bannerDot = banner.querySelector('.deadline-banner-dot');
+  bannerDot.style.animation = 'none';
+
+  banner.querySelector('p').innerHTML = 'The original team is being selected — if you\'d still like to apply, <span>join the waitlist</span>';
+
+  var bannerLink = banner.querySelector('a');
+  bannerLink.textContent = 'Join Waitlist';
+
+  // 2. Hero badge
+  var heroBadge = document.querySelector('.hero-badge');
+  if (heroBadge) {
+    heroBadge.textContent = 'Applications closed — waitlist is open';
+  }
+
+  // 3. Hero subtitle
+  var heroSub = document.querySelector('.hero-sub');
+  if (heroSub) {
+    heroSub.textContent = 'Our founding team is being selected. If you\'d still like to be part of SetBuddy, join the waitlist — we\'ll reach out as spots open up.';
+  }
+
+  // 4. All "Apply Now" / CTA buttons → "Join Waitlist"
+  document.querySelectorAll('.hero-cta').forEach(function(btn) {
+    btn.textContent = 'Join Waitlist';
+  });
+  document.querySelectorAll('.cta-btn').forEach(function(btn) {
+    btn.textContent = 'Join Waitlist';
+  });
+
+  // 5. All role badges → "Waitlist" or "Filled" for leads (skip already filled roles)
+  var leadTitles = ['Team Lead', 'Team Lead (Research)', 'Project Co-Lead'];
+  var badgeSelectors = ['.role-new', '.role-vital', '.role-limited', '.role-closing'];
+  badgeSelectors.forEach(function(sel) {
+    document.querySelectorAll(sel).forEach(function(badge) {
+      // Skip badges inside the legend
+      if (badge.closest('.badge-legend')) return;
+
+      // Check if this role is a lead position
+      var roleItem = badge.closest('.role-item');
+      var roleName = roleItem ? roleItem.querySelector('.role-item-name') : null;
+      var isLead = roleName && leadTitles.indexOf(roleName.textContent.trim()) !== -1;
+
+      if (isLead) {
+        badge.className = 'role-filled-badge';
+        badge.textContent = 'FILLED';
+        // Add "promoted internally" note
+        var noteEl = document.createElement('div');
+        noteEl.style.cssText = 'font-size:11px;color:#71717a;margin-top:2px;font-style:italic;';
+        noteEl.textContent = 'Filled from existing team members';
+        roleName.parentNode.appendChild(noteEl);
+        // Make the role item look filled
+        roleItem.classList.add('filled');
+        roleItem.setAttribute('onclick', '');
+      } else {
+        var name = roleName ? roleName.textContent.trim() : '';
+        var count = waitlistCounts.hasOwnProperty(name) ? waitlistCounts[name] : 'TBD';
+        badge.className = 'role-waitlist';
+        badge.textContent = 'Waitlisted: ' + count;
+      }
+    });
+  });
+
+  // 6. Sidebar text
+  var sidebarP = document.querySelector('.roles-sidebar > p');
+  if (sidebarP) {
+    sidebarP.textContent = 'Primary applications are closed. You can still join the waitlist for any role — we\'ll reach out as spots open up.';
+  }
+
+  // 7. Show the waitlist explainer notice
+  var waitlistNotice = document.getElementById('waitlistNotice');
+  if (waitlistNotice) waitlistNotice.style.display = 'flex';
+
+  // 8. Final CTA section
+  var finalH2 = document.querySelector('.final-cta-left h2');
+  var finalP = document.querySelector('.final-cta-left p');
+  if (finalH2) finalH2.textContent = 'Didn\'t make the deadline?';
+  if (finalP) finalP.textContent = 'The founding team is being selected, but the waitlist is open. Join now and we\'ll reach out as roles become available.';
+}
+
+// Initialize
+if (isDeadlinePassed()) {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', switchToWaitlistMode);
+  } else {
+    switchToWaitlistMode();
+  }
+} else {
+  updateCountdown();
+  setInterval(updateCountdown, 60000);
+}
+
+// Scroll hide/show banner
+var lastScroll = 0;
+window.addEventListener('scroll', function() {
+  var banner = document.querySelector('.deadline-banner');
+  var current = window.scrollY;
   if (current > lastScroll && current > 60) {
     banner.classList.add('hidden');
   } else {
@@ -1508,6 +1827,22 @@ window.addEventListener('scroll', () => {
   }
   lastScroll = current;
 });
+
+// ── Page routing: #team shows team page, anything else shows main ──
+function handleRoute() {
+  var teamPage = document.getElementById('teamPage');
+  var mainContent = document.getElementById('mainContent');
+  if (window.location.hash === '#team') {
+    teamPage.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  } else {
+    teamPage.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+}
+
+window.addEventListener('hashchange', handleRoute);
+handleRoute();
 </script>
 
 </body>
