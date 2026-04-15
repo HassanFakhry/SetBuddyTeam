@@ -42,6 +42,45 @@
     z-index: 9999;
   }
 
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10001;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .site-nav-logo {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .site-nav-logo span { color: var(--accent); }
+
+  .site-nav-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .site-nav-links a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .site-nav-links a:hover { color: var(--text); }
+  .site-nav-links a.active { color: var(--accent); }
+
   .deadline-banner {
     position: sticky;
     top: 0;
@@ -856,7 +895,7 @@
     inset: 0;
     background: var(--bg);
     z-index: 10000;
-    overflow: hidden;
+    overflow-y: auto;
   }
 
   .team-page-inner {
@@ -945,11 +984,8 @@
   .team-back-link:hover .team-back-arrow { transform: translateX(-3px); }
 
   .team-page-footer {
-    position: absolute;
-    bottom: 32px;
-    left: 0;
-    right: 0;
     text-align: center;
+    padding: 32px 0;
   }
 
   .team-page-footer p {
@@ -959,6 +995,284 @@
   }
 
   .team-page-footer a { color: var(--accent); text-decoration: none; }
+
+  /* ── Team Page V2: Clean Doc Style ── */
+  .team-page-inner-v2 {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 80px 48px 120px;
+    overflow-y: auto;
+    height: 100vh;
+  }
+
+  .team-v2-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+    margin-bottom: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .team-v2-title {
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    margin-bottom: 10px;
+  }
+
+  .team-v2-sub {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .team-status-explainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+  }
+
+  .team-status-item {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .team-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+
+  .team-status-item strong {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text);
+    display: block;
+    margin-bottom: 1px;
+  }
+
+  .team-status-item p {
+    font-size: 11px;
+    color: #52525b;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .team-thankyou-notice {
+    border-left: 3px solid var(--accent);
+    padding: 0 0 0 20px;
+  }
+
+  .team-thankyou-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .team-thankyou-text {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .team-waitlist-link {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    margin-top: 12px;
+    transition: opacity 0.2s;
+  }
+
+  .team-waitlist-link:hover { opacity: 0.8; }
+
+  /* 2-column role layout */
+  .team-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 56px;
+  }
+
+  .team-column {}
+
+  .team-column-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .team-column-label.col-mkt { color: var(--blue); border-color: rgba(59, 130, 246, 0.3); }
+  .team-column-label.col-res { color: var(--green); border-color: rgba(34, 197, 94, 0.3); }
+  .team-column-label.col-eng { color: var(--accent); border-color: rgba(249, 115, 22, 0.3); }
+  .team-column-label.col-ops { color: var(--purple); border-color: rgba(168, 85, 247, 0.3); }
+
+  .team-roles-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .team-role-card {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .team-role-card:last-child { border-bottom: none; }
+
+  .team-role-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .team-role-header .role-item-dot { display: none; }
+
+  .team-role-name {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+
+  .team-role-slots {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    color: #52525b;
+  }
+
+  .team-role-section {
+    padding: 0;
+    margin-bottom: 6px;
+  }
+
+  .team-role-section:last-child { margin-bottom: 0; }
+
+  .team-section-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    display: inline;
+  }
+
+  .team-onboard .team-section-label { color: #22c55e; }
+  .team-interview .team-section-label { color: #f97316; }
+  .team-rejected .team-section-label { color: #52525b; }
+
+  .team-names {
+    display: inline;
+    font-size: 13px;
+    color: #a1a1aa;
+    line-height: 1.6;
+  }
+
+  .team-section-label::after { content: ' '; }
+
+  .team-confirmed {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: #22c55e;
+    letter-spacing: 0.2px;
+  }
+
+  .team-count {
+    display: inline;
+    font-size: 12px;
+    color: #3f3f46;
+    font-style: italic;
+  }
+
+  .team-sub-group { margin-top: 28px; }
+
+  /* Bottom area */
+  .team-bottom-intro {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    margin-bottom: 28px;
+  }
+
+  /* 3 column */
+  .team-bottom-3col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .team-deferred-note {
+    font-size: 13px;
+    color: #52525b;
+    font-style: italic;
+    margin: 24px 0 0;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .team-interview-signup { margin: 0; }
+
+  .team-bottom-text {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0 0 12px;
+  }
+
+  .team-bottom-text strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .team-signup-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .team-interview-signup p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0 0 12px;
+  }
+
+  .team-signup-btn {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .team-signup-btn:hover { opacity: 0.8; }
+
+  @media (max-width: 700px) {
+    .team-page-inner-v2 { padding: 70px 20px 100px; }
+    .team-v2-header { grid-template-columns: 1fr; gap: 28px; }
+    .team-columns { grid-template-columns: 1fr; gap: 32px; }
+    .team-bottom-3col { grid-template-columns: 1fr; gap: 24px; }
+    .team-status-explainer { grid-template-columns: 1fr; }
+  }
 
   .team-nav-link { color: var(--muted); transition: color 0.2s; }
   .team-nav-link:hover { color: var(--text); }
@@ -1035,6 +1349,14 @@
 <body>
 <div class="grain"></div>
 
+<nav class="site-nav" id="siteNav">
+  <a href="#results" class="site-nav-logo">Set<span>Buddy</span></a>
+  <div class="site-nav-links">
+    <a href="#results" id="navResults">Results</a>
+    <a href="#apply" id="navApply">Apply</a>
+  </div>
+</nav>
+
 <div class="deadline-banner">
   <div class="deadline-banner-dot"></div>
   <p>Applications close <span>April 12, 2026</span> — <span id="countdown"></span> left</p>
@@ -1048,7 +1370,6 @@
   <div class="hero-actions">
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKmFokrMa36mESzjZ5wDr5OENixbp4PKAibIKXS-_EQ6Ea7g/viewform" target="_blank" class="hero-cta">Apply Now</a>
     <a href="https://play.google.com/store/apps/details?id=com.hassanfak.setbuddy" target="_blank" class="hero-secondary">View on Google Play &darr;</a>
-    <a href="#team" class="hero-secondary">Meet the Team &rarr;</a>
   </div>
 </div>
 
@@ -1636,20 +1957,148 @@
 </div>
 
 <div class="footer" id="mainFooter">
-  <p>SetBuddy AI &bull; <a href="https://play.google.com/store/apps/details?id=com.hassanfak.setbuddy" target="_blank">Google Play</a> &bull; <a href="#team" class="team-nav-link">Meet the Team</a> &bull; Portland, OR</p>
+  <p>SetBuddy AI &bull; <a href="https://play.google.com/store/apps/details?id=com.hassanfak.setbuddy" target="_blank">Google Play</a> &bull; <a href="#results" class="team-nav-link">Application Results</a> &bull; Portland, OR</p>
 </div>
 
 <!-- TEAM PAGE (hidden by default, shown when URL hash is #team) -->
 <div id="teamPage" class="team-page" style="display:none;">
   <div class="grain"></div>
-  <a href="#" class="team-back-link">
-    <span class="team-back-arrow">&larr;</span> Back to roles
-  </a>
-  <div class="team-page-inner">
-    <div class="team-soon-glow"></div>
-    <div class="section-label" style="text-align:center;position:relative;z-index:1;">Meet the Team</div>
-    <div class="team-soon-text">Soon<span>...</span></div>
-    <p class="team-soon-sub">The founding team is being assembled.</p>
+  <div class="team-page-inner-v2">
+    <div class="team-v2-header">
+      <div class="section-label" style="margin-bottom:8px;">The Team</div>
+      <h1 class="team-v2-title">Application Results</h1>
+      <p class="team-v2-sub">Here's where every role stands. If you've been selected for an interview, sign up for a slot at the bottom of this page.</p>
+
+      <div class="team-thankyou-notice">
+        <p class="team-thankyou-title">Thank you to the over 60 original team applicants!</p>
+        <p class="team-thankyou-text">If you are not on this list, feel free to apply as we are always pulling from our waitlist if our team needs to be expanded or if somebody drops.</p>
+        <p class="team-thankyou-text" style="margin-top:10px;">Don't feel bad if you didn't get accepted — every single role had below a 50% interview rate.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKmFokrMa36mESzjZ5wDr5OENixbp4PKAibIKXS-_EQ6Ea7g/viewform" target="_blank" class="team-waitlist-link">Join the waitlist →</a>
+      </div>
+
+      <div class="team-status-explainer">
+        <div class="team-status-item">
+          <span class="team-status-dot" style="background:#22c55e;"></span>
+          <div><strong>Onboarded</strong><p>You're on the team and being brought up to speed.</p></div>
+        </div>
+        <div class="team-status-item">
+          <span class="team-status-dot" style="background:#f97316;"></span>
+          <div><strong>Interview</strong><p>Your application stood out — we'd like to talk (10–15 min).</p></div>
+        </div>
+        <div class="team-status-item">
+          <span class="team-status-dot" style="background:#3b82f6;"></span>
+          <div><strong>Screening</strong><p>Submit a work sample. Strongest submissions get selected.</p></div>
+        </div>
+        <div class="team-status-item">
+          <span class="team-status-dot" style="background:#52525b;"></span>
+          <div><strong>Not Selected</strong><p>Not this round — join the waitlist to stay on our radar.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-columns">
+
+      <!-- LEFT COLUMN: Marketing & Research -->
+      <div class="team-column">
+        <div class="team-column-label col-mkt">Marketing</div>
+        <div class="team-roles-grid">
+          <div class="team-role-card">
+            <div class="team-role-header"><span class="team-role-name">Video Scriptor</span><span class="team-role-slots">2 spots</span></div>
+            <div class="team-role-section team-onboard"><div class="team-section-label">✓ Onboarded</div><div class="team-names">—</div></div>
+            <div class="team-role-section team-interview"><div class="team-section-label">→ Screening</div><div class="team-names">Seyon S., Gautham S., Brandon M., Asmitha A., Umaima M., Chandsi G., Isaac J.</div></div>
+            <div class="team-role-section team-rejected"><div class="team-section-label">✗ Not Selected</div><div class="team-count">5 applicants</div></div>
+          </div>
+          <div class="team-role-card">
+            <div class="team-role-header"><span class="team-role-name">Videographer</span><span class="team-role-slots">2 spots</span></div>
+            <div class="team-role-section team-onboard"><div class="team-section-label">✓ Onboarded</div><div class="team-names">Tyler H. <span class="team-confirmed">(confirmed)</span></div></div>
+            <div class="team-role-section team-interview"><div class="team-section-label">→ Interview</div><div class="team-names">Chandsi G., Athira B., Isaac J., Brandon M.</div></div>
+            <div class="team-role-section team-rejected"><div class="team-section-label">✗ Not Selected</div><div class="team-count">4 applicants</div></div>
+          </div>
+          <div class="team-role-card">
+            <div class="team-role-header"><span class="team-role-name">Video Editor</span><span class="team-role-slots">2 spots</span></div>
+            <div class="team-role-section team-onboard"><div class="team-section-label">✓ Onboarded</div><div class="team-names">Seyon S.</div></div>
+            <div class="team-role-section team-interview"><div class="team-section-label">→ Interview</div><div class="team-names">Brandon M., Tyler H., Annie C., Noraise I.</div></div>
+            <div class="team-role-section team-rejected"><div class="team-section-label">✗ Not Selected</div><div class="team-count">14 applicants</div></div>
+          </div>
+          <div class="team-role-card">
+            <div class="team-role-header"><span class="team-role-name">Graphic Designer</span><span class="team-role-slots">1–2 spots</span></div>
+            <div class="team-role-section team-onboard"><div class="team-section-label">✓ Onboarded</div><div class="team-names">Thilan W. <span class="team-confirmed">(confirmed)</span></div></div>
+            <div class="team-role-section team-interview"><div class="team-section-label">→ Screening</div><div class="team-names">Adiyan M., Gautham S., Sunaina A., Viraj A., Viraj V., Ruhaanveer K.</div></div>
+            <div class="team-role-section team-rejected"><div class="team-section-label">✗ Not Selected</div><div class="team-count">12 applicants</div></div>
+          </div>
+          <div class="team-role-card">
+            <div class="team-role-header"><span class="team-role-name">Outreach</span><span class="team-role-slots">1–2 spots</span></div>
+            <div class="team-role-section team-onboard"><div class="team-section-label">✓ Onboarded</div><div class="team-names">Carolyn N. <span class="team-confirmed">(confirmed)</span></div></div>
+            <div class="team-role-section team-interview"><div class="team-section-label">→ Interview</div><div class="team-names">Athira B., Umaima M.</div></div>
+            <div class="team-role-section team-rejected"><div class="team-section-label">✗ Not Selected</div><div class="team-count">14 applicants</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: Software, Operations, Research -->
+      <div class="team-column">
+        <div class="team-column-label col-eng">Software</div>
+        <div class="team-roles-grid">
+          <div class="team-role-card">
+            <div class="team-role-header"><span class="team-role-name">Software Engineer</span><span class="team-role-slots">3–4 spots</span></div>
+            <div class="team-role-section team-onboard"><div class="team-section-label">✓ Onboarded</div><div class="team-names">Aditya C., Junaayd S., Olivier S.</div></div>
+            <div class="team-role-section team-interview"><div class="team-section-label">→ Interview</div><div class="team-names">Adiyan M., Seyon S., Dheeraj B., Noraise I., Mahrus M.</div></div>
+            <div class="team-role-section team-rejected"><div class="team-section-label">✗ Not Selected</div><div class="team-count">11 applicants</div></div>
+          </div>
+        </div>
+
+        <div class="team-sub-group">
+          <div class="team-column-label col-ops">Operations</div>
+          <div class="team-roles-grid">
+            <div class="team-role-card">
+              <div class="team-role-header"><span class="team-role-name">Scouter</span><span class="team-role-slots">2–3 spots</span></div>
+              <div class="team-role-section team-onboard"><div class="team-section-label">✓ Onboarded</div><div class="team-names">Nish G. <span class="team-confirmed">(confirmed)</span>, Mihir G. <span class="team-confirmed">(confirmed)</span></div></div>
+              <div class="team-role-section team-interview"><div class="team-section-label">→ Interview</div><div class="team-names">Umaima M., Athira B., Pranath M., Annie C., Daniyal M.</div></div>
+              <div class="team-role-section team-rejected"><div class="team-section-label">✗ Not Selected</div><div class="team-count">8 applicants</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-sub-group">
+          <div class="team-column-label col-res">Research</div>
+          <div class="team-roles-grid">
+            <div class="team-role-card">
+              <div class="team-role-header"><span class="team-role-name">Research Consultant</span><span class="team-role-slots">4 spots</span></div>
+              <div class="team-role-section team-onboard"><div class="team-section-label">✓ Onboarded</div><div class="team-names">Archith R. <span class="team-confirmed">(confirmed)</span></div></div>
+              <div class="team-role-section team-interview"><div class="team-section-label">→ Interview</div><div class="team-names">Sunaina A., Abhiram S., Tharun K., Mihir G., Gautham S., Aneesh K., Nish G., Daniyal M., Ruhaanveer K.</div></div>
+              <div class="team-role-section team-rejected"><div class="team-section-label">✗ Not Selected</div><div class="team-count">8 applicants</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="team-bottom-intro">
+      <p class="team-bottom-text">If you are in any of these three stages, please join the Discord server and we will give you a special role:</p>
+      <a href="#" class="team-signup-btn">Join the Discord →</a>
+    </div>
+
+    <div class="team-bottom-3col">
+      <div>
+        <div class="team-signup-title">Screening</div>
+        <p class="team-bottom-text">If you are being screened, your instructions are here. Submissions are due <strong>Saturday, April 19th, 2026</strong>.</p>
+        <a href="https://docs.google.com/document/d/1nH_-e2PM54zkSs40_GrwZnAUA0__yXXE3ASNcvkJhqc/edit?usp=sharing" target="_blank" class="team-signup-btn">View screening instructions →</a>
+      </div>
+      <div>
+        <div class="team-signup-title">Onboarding</div>
+        <p class="team-bottom-text">Congratulations! You have been accepted. Check your email for next steps on how to join the team.</p>
+      </div>
+      <div>
+        <div class="team-signup-title">Interviews</div>
+        <p class="team-bottom-text">To be determined. Interview sign-up sheet will be available on <strong>April 19th at 11:59 PM</strong>.</p>
+        <p class="team-bottom-text" style="margin-top:8px;">Please confirm you are still interested below before <strong>April 19, 2026</strong>. If you do not fill out this form, you will not continue your interview process.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSca4duKotKLJ6GM2DigCtRjAJF5Pf83R44q48QbnsDaRdT-Lw/viewform?usp=publish-editor" target="_blank" class="team-signup-btn">Confirm your interest →</a>
+      </div>
+    </div>
+
+    <p class="team-deferred-note">Hiring Manager, Team Lead roles, and Project Co-Lead will be determined at a later date.</p>
+
   </div>
   <div class="team-page-footer">
     <p>SetBuddy AI &bull; <a href="https://play.google.com/store/apps/details?id=com.hassanfak.setbuddy" target="_blank">Google Play</a> &bull; Portland, OR</p>
@@ -1831,13 +2280,22 @@ window.addEventListener('scroll', function() {
 // ── Page routing: #team shows team page, anything else shows main ──
 function handleRoute() {
   var teamPage = document.getElementById('teamPage');
-  var mainContent = document.getElementById('mainContent');
-  if (window.location.hash === '#team') {
-    teamPage.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-  } else {
+  var navResults = document.getElementById('navResults');
+  var navApply = document.getElementById('navApply');
+  if (window.location.hash === '#apply') {
     teamPage.style.display = 'none';
     document.body.style.overflow = '';
+    if (navResults) navResults.classList.remove('active');
+    if (navApply) navApply.classList.add('active');
+  } else {
+    teamPage.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    teamPage.scrollTop = 0;
+    if (navResults) navResults.classList.add('active');
+    if (navApply) navApply.classList.remove('active');
+    if (window.location.hash !== '#results' && window.location.hash !== '') {
+      window.location.hash = '#results';
+    }
   }
 }
 
