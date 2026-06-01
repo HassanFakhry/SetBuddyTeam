@@ -539,6 +539,7 @@
   .role-group-icon.ops { background: rgba(168, 85, 247, 0.12); }
   .role-group-icon.mkt { background: rgba(59, 130, 246, 0.12); }
   .role-group-icon.res { background: rgba(34, 197, 94, 0.12); }
+  .role-group-icon.mod { background: rgba(236, 72, 153, 0.12); }
 
   .role-group-title { font-size: 16px; font-weight: 700; letter-spacing: -0.3px; }
 
@@ -603,6 +604,7 @@
   .dot-ops { background: var(--purple); }
   .dot-mkt { background: var(--blue); }
   .dot-res { background: var(--green); }
+  .dot-mod { background: #ec4899; }
 
   .role-item-name { font-size: 14.5px; font-weight: 600; }
 
@@ -1181,6 +1183,7 @@
   .team-column-label.col-res { color: var(--green); border-color: rgba(34, 197, 94, 0.3); }
   .team-column-label.col-eng { color: var(--accent); border-color: rgba(249, 115, 22, 0.3); }
   .team-column-label.col-ops { color: var(--purple); border-color: rgba(168, 85, 247, 0.3); }
+  .team-column-label.col-mod { color: #ec4899; border-color: rgba(236, 72, 153, 0.3); }
 
   .team-roles-grid {
     display: flex;
@@ -1390,7 +1393,7 @@
 </div>
 
 <div class="hero">
-  <div class="hero-badge">We're hiring — 15 open roles across 4 teams</div>
+  <div class="hero-badge">We're hiring — 16 open roles across 5 teams</div>
   <h1>Help us build the<br><span>AI coach everyone deserves</span></h1>
   <p class="hero-sub">SetBuddy uses AI pose detection to watch your form and tell you what to fix — in real time. We've built the prototype. Now we need a team to make it real.</p>
   <div class="hero-actions">
@@ -1470,7 +1473,7 @@
     <div class="section-label">Open Roles</div>
     <div class="roles-layout">
       <div class="roles-sidebar">
-        <h2>15 roles across 4 teams</h2>
+        <h2>16 roles across 5 teams</h2>
         <p>Click any role to see what you'd be assigned to do. Some roles have limited availability — don't wait.</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKmFokrMa36mESzjZ5wDr5OENixbp4PKAibIKXS-_EQ6Ea7g/viewform" target="_blank" class="hero-cta">Apply Now</a>
 
@@ -1546,6 +1549,7 @@
                   <div class="role-item-dot dot-eng"></div>
                   <div class="role-item-name">Software Engineer</div>
                 </div>
+                <span class="role-hiring">Hiring</span>
                 <div class="role-item-chevron">&#x276F;</div>
               </div>
               <div class="role-item-detail">
@@ -1675,7 +1679,7 @@
           <div class="role-group-header">
             <div class="role-group-icon mkt">&#128227;</div>
             <div class="role-group-title">Marketing</div>
-            <div class="role-group-count">7 roles</div>
+            <div class="role-group-count">5 roles</div>
           </div>
           <div class="role-group-roles">
             <div class="role-item" onclick="toggleRole(this)">
@@ -1737,27 +1741,6 @@
                     <li>Coordinate cross-promotions and partnerships that drive app downloads</li>
                     <li>Track outreach conversations and report on partnership pipeline weekly</li>
                     <li>Work with the Team Lead to align outreach targets with the overall growth strategy</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="role-item" onclick="toggleRole(this)">
-              <div class="role-item-header">
-                <div class="role-item-left">
-                  <div class="role-item-dot dot-mkt"></div>
-                  <div class="role-item-name">Videographer</div>
-                </div>
-                <div class="role-item-chevron">&#x276F;</div>
-              </div>
-              <div class="role-item-detail">
-                <div class="role-item-detail-inner">
-                  <p>You create video content that shows SetBuddy in action. Demos, tutorials, promo clips — you shoot or screen-record it, and you make it look good enough that people stop scrolling.</p>
-                  <ul>
-                    <li>Produce short-form video content (15–60 seconds) for TikTok, Reels, and YouTube Shorts</li>
-                    <li>Record app demos and screen captures showing SetBuddy's real-time form detection</li>
-                    <li>Work with the Scriptor to bring written scripts to life visually</li>
-                    <li>Deliver raw and edited footage on schedule for the Editor and Team Lead to review</li>
-                    <li>Maintain a consistent visual style across all video content</li>
                   </ul>
                 </div>
               </div>
@@ -1860,6 +1843,72 @@
                     <li>Write your findings as basic code with a fix-it message and a link to a video tutorial</li>
                     <li>Submit code to a shared Google Doc for the Team Lead to review and implement</li>
                     <li>Advise on edge cases — how form standards vary across body types, mobility levels, and experience</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODELING -->
+        <div class="role-group">
+          <div class="role-group-header">
+            <div class="role-group-icon mod">&#127916;</div>
+            <div class="role-group-title">Modeling</div>
+            <div class="role-group-count">2 roles</div>
+          </div>
+          <div class="role-group-roles">
+            <div class="role-item filled">
+              <div class="role-item-header">
+                <div class="role-item-left">
+                  <div class="role-item-dot dot-mod" style="opacity:0.4"></div>
+                  <div>
+                    <div class="role-item-name">Marketing Lead</div>
+                    <div class="role-item-req">Led by the Marketing Lead — not a separate role</div>
+                  </div>
+                </div>
+                <span class="role-filled-badge">Shared</span>
+              </div>
+            </div>
+            <div class="role-item" onclick="toggleRole(this)">
+              <div class="role-item-header">
+                <div class="role-item-left">
+                  <div class="role-item-dot dot-mod"></div>
+                  <div class="role-item-name">Videographer</div>
+                </div>
+                <div class="role-item-chevron">&#x276F;</div>
+              </div>
+              <div class="role-item-detail">
+                <div class="role-item-detail-inner">
+                  <p>You create video content that shows SetBuddy in action. Demos, tutorials, promo clips — you shoot or screen-record it, and you make it look good enough that people stop scrolling.</p>
+                  <ul>
+                    <li>Produce short-form video content (15–60 seconds) for TikTok, Reels, and YouTube Shorts</li>
+                    <li>Record app demos and screen captures showing SetBuddy's real-time form detection</li>
+                    <li>Work with the Scriptor to bring written scripts to life visually</li>
+                    <li>Deliver raw and edited footage on schedule for the Editor and Team Lead to review</li>
+                    <li>Maintain a consistent visual style across all video content</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="role-item" onclick="toggleRole(this)">
+              <div class="role-item-header">
+                <div class="role-item-left">
+                  <div class="role-item-dot dot-mod"></div>
+                  <div class="role-item-name">Model</div>
+                </div>
+                <span class="role-new">New</span>
+                <div class="role-item-chevron">&#x276F;</div>
+              </div>
+              <div class="role-item-detail">
+                <div class="role-item-detail-inner">
+                  <p>Models are the people who model. Your main job is modeling for our on-video promotions — appearing on camera and demonstrating the exercises in SetBuddy's demos, tutorials, and promo clips. This branch is an extension of Marketing and is led by the Marketing Lead.</p>
+                  <ul>
+                    <li>Demonstrate assigned exercises on camera for demos, tutorials, and promo clips</li>
+                    <li>Perform both correct form and common mistakes when a clip calls for it</li>
+                    <li>Work with the Videographer and Scriptor to nail the shot and the messaging</li>
+                    <li>Show up prepared and on schedule for filming sessions</li>
+                    <li>Help represent a range of body types and experience levels across our content</li>
                   </ul>
                 </div>
               </div>
@@ -2014,7 +2063,7 @@
 
       <div class="team-thankyou-notice">
         <p class="team-thankyou-title">Thank you to everyone who applied.</p>
-        <p class="team-thankyou-text">Over 60 people applied for 15 roles. Every role had below a 50% acceptance rate. Thank you to everyone who put their name in — it means a lot.</p>
+        <p class="team-thankyou-text">Over 80 people applied for 16 roles. Every role had below a 35% acceptance rate. Thank you to everyone who put their name in — it means a lot.</p>
       </div>
     </div>
 
@@ -2066,14 +2115,6 @@
           </div>
 
           <div class="team-role-card">
-            <div class="team-role-header"><span class="team-role-name">Videographer</span><span class="team-role-slots">2 onboarded</span></div>
-            <div class="team-role-section team-onboard">
-              <div class="team-section-label">✓ Onboarded</div>
-              <div class="team-names">Tyler H., Athira B.</div>
-            </div>
-          </div>
-
-          <div class="team-role-card">
             <div class="team-role-header"><span class="team-role-name">Video Editor</span><span class="team-role-slots">2 onboarded</span></div>
             <div class="team-role-section team-onboard">
               <div class="team-section-label">✓ Onboarded</div>
@@ -2098,6 +2139,26 @@
           </div>
 
         </div>
+
+        <div class="team-sub-group">
+          <div class="team-column-label col-mod">Modeling</div>
+          <div class="team-roles-grid">
+            <div class="team-role-card">
+              <div class="team-role-header"><span class="team-role-name">Videographer</span><span class="team-role-slots">2 onboarded</span></div>
+              <div class="team-role-section team-onboard">
+                <div class="team-section-label">✓ Onboarded</div>
+                <div class="team-names">Tyler H., Athira B.</div>
+              </div>
+            </div>
+            <div class="team-role-card">
+              <div class="team-role-header"><span class="team-role-name">Model</span><span class="team-role-slots">5 onboarded</span></div>
+              <div class="team-role-section team-onboard">
+                <div class="team-section-label">✓ Onboarded</div>
+                <div class="team-names">Zach G., Harrison O., Naveed F., Sean R., Thilan W.</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- RIGHT COLUMN: Software, Operations, Research -->
@@ -2105,10 +2166,10 @@
         <div class="team-column-label col-eng">Software</div>
         <div class="team-roles-grid">
           <div class="team-role-card">
-            <div class="team-role-header"><span class="team-role-name">Software Engineer</span><span class="team-role-slots">5 onboarded</span></div>
+            <div class="team-role-header"><span class="team-role-name">Software Engineer</span><span class="team-role-slots">3 onboarded</span></div>
             <div class="team-role-section team-onboard">
               <div class="team-section-label">✓ Onboarded</div>
-              <div class="team-names">Eric Zhao, Junaayd S., Adiyan M., Hassan Fakhry</div>
+              <div class="team-names">Junaayd S., Adiyan M., Hassan Fakhry</div>
             </div>
           </div>
         </div>
@@ -2145,6 +2206,7 @@
             </div>
           </div>
         </div>
+
       </div>
 
     </div>
@@ -2196,14 +2258,14 @@ function updateCountdown() {
 }
 
 function switchToWaitlistMode() {
-  // Post-deadline: applications closed, founding team selected.
+  // Post-deadline: most roles are waitlisted; Project Co-Lead is still open to applications.
 
-  // 1. Banner — closed messaging
+  // 1. Banner — waitlist messaging
   var banner = document.querySelector('.deadline-banner');
   var bannerDot = banner.querySelector('.deadline-banner-dot');
   bannerDot.style.animation = 'none';
 
-  banner.querySelector('p').innerHTML = 'The founding team has been selected — <span>join the waitlist</span>. We pull from the waitlist often.';
+  banner.querySelector('p').innerHTML = 'The founding team has been selected — most roles are now <span>waitlisted</span>. We pull from the waitlist often.';
 
   var bannerLink = banner.querySelector('a');
   bannerLink.textContent = 'Join Waitlist';
@@ -2211,33 +2273,33 @@ function switchToWaitlistMode() {
   // 2. Hero badge
   var heroBadge = document.querySelector('.hero-badge');
   if (heroBadge) {
-    heroBadge.textContent = 'Applications closed';
+    heroBadge.textContent = 'Most roles waitlisted — Project Co-Lead still open';
   }
 
   // 3. Hero subtitle
   var heroSub = document.querySelector('.hero-sub');
   if (heroSub) {
-    heroSub.textContent = 'Our founding team has been selected. Thanks to everyone who applied.';
+    heroSub.textContent = 'Our founding team has been selected. Most roles are now waitlisted — we pull from the waitlist often — and Project Co-Lead is still open to applications.';
   }
 
   // 4. CTA buttons
   document.querySelectorAll('.hero-cta').forEach(function(btn) {
     if (btn.closest('.team-bottom-cta')) return;
-    btn.textContent = 'Apply';
+    btn.textContent = 'Apply / Join Waitlist';
   });
   document.querySelectorAll('.cta-btn').forEach(function(btn) {
-    btn.textContent = 'Apply';
+    btn.textContent = 'Apply / Join Waitlist';
   });
 
-  // 5. Lead roles → "Filled"; other roles keep their original badge
-  var leadTitles = ['Team Lead', 'Team Lead (Research)', 'Project Co-Lead'];
+  // 5. Team Lead roles → "Filled" (promoted internally). Project Co-Lead stays OPEN.
+  var leadTitles = ['Team Lead', 'Team Lead (Research)'];
   var badgeSelectors = ['.role-new', '.role-vital', '.role-limited', '.role-closing'];
   badgeSelectors.forEach(function(sel) {
     document.querySelectorAll(sel).forEach(function(badge) {
       // Skip badges inside the legend
       if (badge.closest('.badge-legend')) return;
 
-      // Check if this role is a lead position
+      // Check if this role is a filled lead position
       var roleItem = badge.closest('.role-item');
       var roleName = roleItem ? roleItem.querySelector('.role-item-name') : null;
       var isLead = roleName && leadTitles.indexOf(roleName.textContent.trim()) !== -1;
@@ -2245,12 +2307,10 @@ function switchToWaitlistMode() {
       if (isLead) {
         badge.className = 'role-filled-badge';
         badge.textContent = 'FILLED';
-        // Add "promoted internally" note
         var noteEl = document.createElement('div');
         noteEl.style.cssText = 'font-size:11px;color:#71717a;margin-top:2px;font-style:italic;';
         noteEl.textContent = 'Filled from existing team members';
         roleName.parentNode.appendChild(noteEl);
-        // Make the role item look filled
         roleItem.classList.add('filled');
         roleItem.setAttribute('onclick', '');
       }
@@ -2260,14 +2320,14 @@ function switchToWaitlistMode() {
   // 6. Sidebar text
   var sidebarP = document.querySelector('.roles-sidebar > p');
   if (sidebarP) {
-    sidebarP.textContent = 'Applications are closed. Thanks to everyone who applied.';
+    sidebarP.textContent = 'Most roles are now waitlisted — we pull from the waitlist often. Project Co-Lead is still open to applications.';
   }
 
   // 8. Final CTA section
   var finalH2 = document.querySelector('.final-cta-left h2');
   var finalP = document.querySelector('.final-cta-left p');
-  if (finalH2) finalH2.textContent = 'Applications are closed';
-  if (finalP) finalP.textContent = 'The founding team has been selected. Thanks to everyone who applied.';
+  if (finalH2) finalH2.textContent = 'Still want in?';
+  if (finalP) finalP.textContent = 'The founding team has been selected, but most roles have a waitlist we pull from often — and Project Co-Lead is still open to applications.';
 }
 
 // Initialize
