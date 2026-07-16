@@ -406,6 +406,7 @@
       <a id="lnkHome" class="on" onclick="go('home')">Home</a>
       <a id="lnkPlans" onclick="go('home');setTimeout(function(){var e=document.getElementById('plans');if(e)e.scrollIntoView({behavior:'smooth'});},50)">Plans</a>
       <a id="lnkTeam" onclick="go('team')">Team</a>
+      <a id="lnkPrivacy" onclick="go('privacy')">Privacy</a>
     </div>
     <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.hassanfak.setbuddy" target="_blank" rel="noopener">Get the app</a>
   </div>
@@ -710,11 +711,6 @@
         <div class="role-line"><div class="rtitle">Research Lead</div><div class="rnames">Manu H.</div></div>
       </div>
       <div class="rgroup reveal">
-        <div class="rgroup-h"><span class="gname">Operations</span><span class="gcount">2</span></div>
-        <div class="role-line"><div class="rtitle">Interviewer</div><div class="rnames">Krish E.</div></div>
-        <div class="role-line"><div class="rtitle">Recruiter / Scouter</div><div class="rnames">Annie C.</div></div>
-      </div>
-      <div class="rgroup reveal">
         <div class="rgroup-h"><span class="gname">Software &amp; Research</span><span class="gcount">7</span></div>
         <div class="role-line"><div class="rtitle">Software Engineers</div><div class="rnames">Junaayd S., Adiyan M., Hassan Fakhry</div></div>
         <div class="role-line"><div class="rtitle">Research Consultants</div><div class="rnames">Archith R., Taafeef, Tharun K., Aneesh K., Mihir G.</div></div>
@@ -898,11 +894,12 @@
 <script>
   function go(page){
     var home=document.getElementById('homePage'),team=document.getElementById('teamPage'),priv=document.getElementById('privacyPage');
-    var lh=document.getElementById('lnkHome'),lt=document.getElementById('lnkTeam');
+    var lh=document.getElementById('lnkHome'),lt=document.getElementById('lnkTeam'),lp=document.getElementById('lnkPrivacy');
     home.style.display='none';team.style.display='none';priv.style.display='none';
-    if(page==='team'){team.style.display='block';lh.classList.remove('on');lt.classList.add('on');history.replaceState(null,'','#team');}
-    else if(page==='privacy'){priv.style.display='block';lh.classList.remove('on');lt.classList.remove('on');history.replaceState(null,'','#privacy');}
-    else{home.style.display='block';lt.classList.remove('on');lh.classList.add('on');history.replaceState(null,'','#home');}
+    lh.classList.remove('on');lt.classList.remove('on');lp.classList.remove('on');
+    if(page==='team'){team.style.display='block';lt.classList.add('on');history.replaceState(null,'','#team');}
+    else if(page==='privacy'){priv.style.display='block';lp.classList.add('on');history.replaceState(null,'','#privacy');}
+    else{home.style.display='block';lh.classList.add('on');history.replaceState(null,'','#home');}
     window.scrollTo(0,0);runReveal();
   }
   function toggleRole(el){if(el.classList.contains('filled'))return;el.classList.toggle('open');}
