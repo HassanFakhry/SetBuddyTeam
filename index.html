@@ -377,6 +377,23 @@
     .shot.rock .dev{animation:none;transform:rotateX(5deg) rotateY(-8deg)}
     .shot.scrolltilt .dev{transform:rotateX(6deg) rotateY(4deg)}
   }
+
+  /* ===== Legal / Privacy page ===== */
+  .legal{border-bottom:1px solid var(--line)}
+  .legal-wrap{max-width:820px;margin:0 auto;padding:80px 32px 96px}
+  .legal-eyebrow{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--orange);margin-bottom:18px}
+  .legal-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,4vw,50px);letter-spacing:-1.6px;line-height:1.02;margin-bottom:12px}
+  .legal-meta{font-family:'Space Mono',monospace;font-size:12.5px;color:var(--muted-2);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:30px}
+  .legal-lead{font-size:17px;line-height:1.7;color:var(--muted);margin-bottom:8px}
+  .legal-wrap h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.5px;margin:44px 0 14px}
+  .legal-wrap p{font-size:15.5px;line-height:1.72;color:var(--muted);margin-bottom:14px}
+  .legal-wrap ul{list-style:none;padding:0;margin:0 0 14px}
+  .legal-wrap li{position:relative;padding-left:22px;font-size:15.5px;line-height:1.7;color:var(--muted);margin-bottom:12px}
+  .legal-wrap li::before{content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;border-radius:2px;background:var(--orange)}
+  .legal-wrap li strong{color:var(--text);font-weight:600}
+  .legal-wrap a{color:var(--orange);text-decoration:none;border-bottom:1px solid rgba(232,93,24,0.35);transition:border-color .18s}
+  .legal-wrap a:hover{border-bottom-color:var(--orange)}
+  .legal-back{margin-top:48px;padding-top:28px;border-top:1px solid var(--line)}
 </style>
 </head>
 <body>
@@ -655,6 +672,7 @@
         <div class="fc-h">Contact</div>
         <a href="mailto:setbuddyhelp@gmail.com">setbuddyhelp@gmail.com</a>
         <a onclick="go('team')">Work with us</a>
+        <a onclick="go('privacy')">Privacy Policy</a>
         <p style="margin-top:14px">Portland, OR · United States</p>
       </div>
     </div>
@@ -692,6 +710,11 @@
         <div class="role-line"><div class="rtitle">Research Lead</div><div class="rnames">Manu H.</div></div>
       </div>
       <div class="rgroup reveal">
+        <div class="rgroup-h"><span class="gname">Operations</span><span class="gcount">2</span></div>
+        <div class="role-line"><div class="rtitle">Interviewer</div><div class="rnames">Krish E.</div></div>
+        <div class="role-line"><div class="rtitle">Recruiter / Scouter</div><div class="rnames">Annie C.</div></div>
+      </div>
+      <div class="rgroup reveal">
         <div class="rgroup-h"><span class="gname">Software &amp; Research</span><span class="gcount">7</span></div>
         <div class="role-line"><div class="rtitle">Software Engineers</div><div class="rnames">Junaayd S., Adiyan M., Hassan Fakhry</div></div>
         <div class="role-line"><div class="rtitle">Research Consultants</div><div class="rnames">Archith R., Taafeef, Tharun K., Aneesh K., Mihir G.</div></div>
@@ -703,7 +726,7 @@
         <div class="role-line"><div class="rtitle">Video / Editors</div><div class="rnames">Seyon S., Tyler H.</div></div>
         <div class="role-line"><div class="rtitle">Graphic Designers</div><div class="rnames">Thilan W., Seyon S.</div></div>
         <div class="role-line"><div class="rtitle">Outreach</div><div class="rnames">Carolyn N., Umaima M.</div></div>
-        <div class="role-line"><div class="rtitle">Videographers / Models</div><div class="rnames">Tyler H., Athira B., Zach G., Harrison O., Naveed F., Sean R.</div></div>
+        <div class="role-line"><div class="rtitle">Videographers / Models</div><div class="rnames">Tyler H., Athira B., Zach G., Harrison O., Annie C.</div></div>
       </div>
     </div>
   </section>
@@ -797,6 +820,7 @@
       <div class="foot-col">
         <div class="fc-h">Contact</div>
         <a href="mailto:setbuddyhelp@gmail.com">setbuddyhelp@gmail.com</a>
+        <a onclick="go('privacy')">Privacy Policy</a>
         <p style="margin-top:14px">Portland, OR · United States</p>
       </div>
     </div>
@@ -804,12 +828,81 @@
   </footer>
 </div>
 
+<!-- ================= PRIVACY ================= -->
+<div id="privacyPage" style="display:none">
+  <section class="legal">
+    <div class="legal-wrap">
+      <div class="legal-eyebrow">[ legal ]</div>
+      <h1 class="legal-title">Privacy Policy</h1>
+      <p class="legal-meta">Effective date: July 16, 2026</p>
+      <p class="legal-lead">SetBuddy ("we", "us", "our") provides an AI-powered workout form-analysis app. This policy explains what information we collect, how we use it, and the choices you have. By using SetBuddy you agree to this policy. If you have questions, contact us at <a href="mailto:setbuddyhelp@gmail.com">setbuddyhelp@gmail.com</a>.</p>
+
+      <h2>Information we collect</h2>
+      <ul>
+        <li><strong>Account information.</strong> When you create an account we collect your email address and a unique account identifier through Firebase Authentication (including if you sign in with Google). You may also choose a username and bio.</li>
+        <li><strong>Workout and form data.</strong> We store the workouts, exercises, form-analysis results, scores, streaks, and settings you create so your history is available across sessions.</li>
+        <li><strong>Video and audio you record for analysis.</strong> When you use Full or Live analysis, the video (and, during Live analysis, short audio clips used only to detect voice commands like "start" and "stop") is sent to our servers to be processed and scored.</li>
+        <li><strong>Purchase information.</strong> If you buy a subscription or the Founding Member plan, Google Play Billing processes the payment and provides us a purchase token so we can verify and activate your access. We do not receive or store your full payment-card details.</li>
+        <li><strong>Advertising and device identifiers.</strong> When you watch a rewarded ad, Google AdMob may collect device and advertising identifiers to serve and measure ads.</li>
+      </ul>
+
+      <h2>How we use your information</h2>
+      <ul>
+        <li>To provide form analysis, scoring, live coaching cues, and to save your history and settings.</li>
+        <li>To operate accounts, verify purchases, and manage your subscription or token balance.</li>
+        <li>To show rewarded ads and enforce fair usage limits.</li>
+        <li>To maintain security, prevent abuse, and improve the app.</li>
+      </ul>
+
+      <h2>Third-party services</h2>
+      <p>We share the minimum data necessary with service providers that help us run SetBuddy:</p>
+      <ul>
+        <li><strong>Google Firebase</strong> — account authentication.</li>
+        <li><strong>Google (Gemini API)</strong> — processes your submitted video/images to generate live coaching cues and analysis.</li>
+        <li><strong>Groq</strong> — transcribes short audio clips during Live analysis to detect spoken start/stop commands.</li>
+        <li><strong>Google AdMob</strong> — serves rewarded advertisements.</li>
+        <li><strong>Google Play Billing</strong> — processes and verifies purchases.</li>
+      </ul>
+      <p>These providers process data under their own privacy policies. We do not sell your personal information.</p>
+
+      <h2>Data retention and deletion</h2>
+      <p>We keep your account and workout data until you delete it. You can delete your account at any time from within the app, which removes your profile, workout history, analysis history, and associated data from our systems. Uploaded videos used for analysis are processed to produce your results; rep clips are retained only when your plan includes saved rep videos, and you can remove them. To request deletion or ask a data question, email <a href="mailto:setbuddyhelp@gmail.com">setbuddyhelp@gmail.com</a>.</p>
+
+      <h2>Security</h2>
+      <p>We use industry-standard measures to protect your data in transit and at rest. No method of transmission or storage is completely secure, but we work to safeguard your information.</p>
+
+      <h2>Children's privacy</h2>
+      <p>SetBuddy is not directed to children under 13, and we do not knowingly collect personal information from them. If you believe a child has provided us information, contact us and we will delete it.</p>
+
+      <h2>Your choices</h2>
+      <ul>
+        <li>You can edit or delete your profile and account data in the app.</li>
+        <li>You can reset your device advertising identifier in your device settings.</li>
+        <li>You can stop all collection by uninstalling the app and deleting your account.</li>
+      </ul>
+
+      <h2>Changes to this policy</h2>
+      <p>We may update this policy from time to time. Material changes will be reflected by updating the effective date above and, where appropriate, notifying you in the app.</p>
+
+      <h2>Contact</h2>
+      <p>SetBuddy — <a href="mailto:setbuddyhelp@gmail.com">setbuddyhelp@gmail.com</a></p>
+
+      <div class="legal-back"><a class="btn-ghost" onclick="go('home')">← Back to home</a></div>
+    </div>
+  </section>
+  <footer>
+    <div class="foot-bar"><span>© 2026 SetBuddy</span><span>setbuddyhelp@gmail.com · Portland, OR</span></div>
+  </footer>
+</div>
+
 <script>
   function go(page){
-    var home=document.getElementById('homePage'),team=document.getElementById('teamPage');
+    var home=document.getElementById('homePage'),team=document.getElementById('teamPage'),priv=document.getElementById('privacyPage');
     var lh=document.getElementById('lnkHome'),lt=document.getElementById('lnkTeam');
-    if(page==='team'){home.style.display='none';team.style.display='block';lh.classList.remove('on');lt.classList.add('on');history.replaceState(null,'','#team');}
-    else{team.style.display='none';home.style.display='block';lt.classList.remove('on');lh.classList.add('on');history.replaceState(null,'','#home');}
+    home.style.display='none';team.style.display='none';priv.style.display='none';
+    if(page==='team'){team.style.display='block';lh.classList.remove('on');lt.classList.add('on');history.replaceState(null,'','#team');}
+    else if(page==='privacy'){priv.style.display='block';lh.classList.remove('on');lt.classList.remove('on');history.replaceState(null,'','#privacy');}
+    else{home.style.display='block';lt.classList.remove('on');lh.classList.add('on');history.replaceState(null,'','#home');}
     window.scrollTo(0,0);runReveal();
   }
   function toggleRole(el){if(el.classList.contains('filled'))return;el.classList.toggle('open');}
@@ -820,7 +913,7 @@
     if(!io){io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});}
     els.forEach(function(e){io.observe(e)});
   }
-  (function(){if(location.hash==='#team'){go('team');}else{runReveal();}})();
+  (function(){if(location.hash==='#team'){go('team');}else if(location.hash==='#privacy'){go('privacy');}else{runReveal();}})();
 
   // ===== 3D phone motion =====
   (function(){
@@ -870,7 +963,7 @@
     }
   })();
 
-  window.addEventListener('hashchange',function(){if(location.hash==='#team')go('team');else if(location.hash==='#home')go('home');});
+  window.addEventListener('hashchange',function(){if(location.hash==='#team')go('team');else if(location.hash==='#privacy')go('privacy');else if(location.hash==='#home')go('home');});
 </script>
 </body>
 </html>
