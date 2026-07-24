@@ -241,13 +241,14 @@
   .rgroup{padding:8px 36px 30px;border-right:1px solid var(--line)}
   .rgroup:first-child{padding-left:32px}
   .rgroup:nth-child(3n){border-right:none;padding-right:32px}
-  .rgroup-h{display:flex;align-items:baseline;gap:10px;margin-bottom:26px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+  .rgroup .rgroup-h:not(:first-child){margin-top:38px}
+.rgroup-h{display:flex;align-items:baseline;gap:10px;margin-bottom:26px;padding-bottom:14px;border-bottom:1px solid var(--line)}
   .rgroup-h .gname{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px;letter-spacing:-0.3px}
   .rgroup-h .gcount{font-family:'Space Mono',monospace;font-size:11px;color:var(--muted-2);text-transform:uppercase;letter-spacing:0.5px}
   .role-line{margin-bottom:20px}
   .role-line .rtitle{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:var(--muted-2);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:5px}
   .role-line .rnames{font-size:15px;color:var(--text)}
-  .role-line .rnames .lead{color:var(--orange);font-weight:600}
+  .role-line 
 
   /* open roles accordion */
   .roles{max-width:var(--max);margin:0 auto;padding:48px 32px 40px}
@@ -719,17 +720,19 @@
     <div class="roster">
       <div class="rgroup reveal">
         <div class="rgroup-h"><span class="gname">Leadership</span><span class="gcount">5</span></div>
-        <div class="role-line"><div class="rtitle">Project Lead</div><div class="rnames"><span class="lead">Hassan Fakhry</span></div></div>
-        <div class="role-line"><div class="rtitle">Operations Lead</div><div class="rnames">Isaac Jiang</div></div>
+        <div class="role-line"><div class="rtitle">Project Lead</div><div class="rnames">Hassan Fakhry</div></div>
+        <div class="role-line"><div class="rtitle">Operations Lead</div><div class="rnames">Carolyn N.</div></div>
         <div class="role-line"><div class="rtitle">Software Lead</div><div class="rnames">Roushil S.</div></div>
         <div class="role-line"><div class="rtitle">Marketing Lead</div><div class="rnames">Andrew</div></div>
         <div class="role-line"><div class="rtitle">Research Lead</div><div class="rnames">Manu H.</div></div>
       </div>
       <div class="rgroup reveal">
-        <div class="rgroup-h"><span class="gname">Software &amp; Research</span><span class="gcount">7</span></div>
-        <div class="role-line"><div class="rtitle">Software Engineers</div><div class="rnames">Junaayd S., Adiyan M., Hassan Fakhry</div></div>
+        <div class="rgroup-h"><span class="gname">Software &amp; Research</span><span class="gcount">8</span></div>
+        <div class="role-line"><div class="rtitle">Software Engineers</div><div class="rnames">Junaayd S., Adiyan M., Gagan R., Hassan Fakhry</div></div>
         <div class="role-line"><div class="rtitle">Research Consultants</div><div class="rnames">Archith R., Taafeef, Tharun K., Aneesh K., Mihir G.</div></div>
-        <div class="role-line"><div class="rtitle">What we build with</div><div class="rnames" style="font-family:'Space Mono',monospace;font-size:13px;color:var(--muted)">Cross-platform mobile · on-device computer vision · a custom form-detection pipeline</div></div>
+        <div class="rgroup-h"><span class="gname">Operations</span><span class="gcount">5</span></div>
+        <div class="role-line"><div class="rtitle">Recruiters</div><div class="rnames">Annie C., Nish G., Daniyal M.</div></div>
+        <div class="role-line"><div class="rtitle">Interviewers</div><div class="rnames">Isaac Jiang, Krish E.</div></div>
       </div>
       <div class="rgroup reveal">
         <div class="rgroup-h"><span class="gname">Marketing &amp; Modeling</span><span class="gcount">11</span></div>
