@@ -740,7 +740,7 @@
         <div class="role-line"><div class="rtitle">Video / Editors</div><div class="rnames">Seyon S., Tyler H.</div></div>
         <div class="role-line"><div class="rtitle">Graphic Designers</div><div class="rnames">Thilan W., Seyon S.</div></div>
         <div class="role-line"><div class="rtitle">Outreach</div><div class="rnames">Carolyn N., Umaima M.</div></div>
-        <div class="role-line"><div class="rtitle">Videographers / Models</div><div class="rnames">Tyler H., Athira B., Zach G., Harrison O., Annie C.</div></div>
+        <div class="role-line"><div class="rtitle">Videographers / Models</div><div class="rnames">Tyler H., Annie C., Zach G., Harrison O., Vallabha S.</div></div>
       </div>
     </div>
   </section>
@@ -966,7 +966,7 @@
     else{home.style.display='block';lh.classList.add('on');history.replaceState(null,'','#home');}
     window.scrollTo(0,0);runReveal();
   }
-  function toggleRole(el){if(el.classList.contains('filled'))return;el.classList.toggle('open');}
+  function toggleRole(el){var item=el.closest('.role-item');if(!item||item.classList.contains('filled'))return;item.classList.toggle('open');}
   var io;
   function runReveal(){
     var els=document.querySelectorAll('.reveal:not(.in)');
