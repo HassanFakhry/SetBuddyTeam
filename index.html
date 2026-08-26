@@ -91,9 +91,9 @@
   .nav-drop-label.on{color:var(--orange)}
   .nav-drop-label.on::after{content:"";position:absolute;left:0;right:22px;bottom:-3px;height:2px;background:var(--orange)}
   .nav-drop-label .caret{width:11px;height:11px;flex-shrink:0;transition:transform .18s ease}
-  .nav-drop:hover .nav-drop-label .caret,.nav-drop:focus-within .nav-drop-label .caret{transform:rotate(180deg)}
+  .nav-drop.open .nav-drop-label .caret{transform:rotate(180deg)}
   .nav-drop-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(4px);min-width:184px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:7px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease,transform .18s ease;box-shadow:0 14px 34px rgba(0,0,0,0.12);z-index:60}
-  .nav-drop:hover .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(9px)}
+  .nav-drop.open .nav-drop-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(9px)}
   .nav-drop-menu a{display:block;font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;padding:9px 13px;border-radius:8px;white-space:nowrap;cursor:pointer;transition:background .18s,color .18s}
   .nav-drop-menu a:hover{background:var(--surface-2);color:var(--text)}
   .nav-drop-menu a.on{color:var(--orange)}
@@ -263,6 +263,22 @@
   .role-line .rtitle{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:var(--muted-2);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:5px}
   .role-line .rnames{font-size:15px;color:var(--text)}
 
+  /* meet the team */
+  .meet-team{max-width:var(--max);margin:0 auto;padding:44px 32px 84px;display:flex;flex-direction:column;gap:64px}
+  .meet-item{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:center}
+  .meet-item:nth-child(even){grid-template-columns:1.4fr 1fr}
+  .meet-item:nth-child(even) .meet-img{order:2}
+  .meet-item:nth-child(even) .meet-text{order:1}
+  .meet-img{aspect-ratio:1;background:var(--surface-2);border:1px solid var(--line);border-radius:16px;display:flex;align-items:center;justify-content:center;color:var(--muted-2);font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.6px}
+  .meet-img img{width:100%;height:100%;object-fit:cover;border-radius:16px;display:block}
+  .meet-item.gagan .meet-img img{object-position:center 10%;}
+  .meet-item.aneesh .meet-img img{transform:rotate(270deg);transform-origin:center center}
+  .meet-text .person{padding-bottom:10px}
+  .meet-text .person + .person{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}
+  .meet-name{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(24px,2.6vw,32px);letter-spacing:-0.6px;margin-bottom:8px}
+  .meet-role{font-family:'Space Mono',monospace;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.6px;color:var(--orange);margin-bottom:16px}
+  .meet-text p{font-size:16px;color:var(--muted);line-height:1.75;max-width:42em}
+
   /* open roles accordion */
   .roles{max-width:var(--max);margin:0 auto;padding:48px 32px 40px}
   .legend{margin:0 0 40px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
@@ -401,6 +417,10 @@
     .th-label,.th-main{grid-column:1}
     .roster{grid-template-columns:1fr;padding-bottom:56px}
     .rgroup,.rgroup:nth-child(3n){border-right:none;padding:8px 32px 24px;border-bottom:1px solid var(--line)}
+    .meet-team{padding:32px 32px 56px;gap:40px}
+    .meet-item,.meet-item:nth-child(even){grid-template-columns:1fr;gap:24px}
+    .meet-item:nth-child(even) .meet-img,.meet-item:nth-child(even) .meet-text{order:initial}
+    .meet-img{max-width:240px}
     .apply-grid{grid-template-columns:1fr}
     .apply-note,.apply-main{grid-column:1}
     .apply-note{border-right:none;border-bottom:1px solid var(--line);padding:48px 32px}
@@ -837,7 +857,7 @@
         <div class="role-line"><div class="rtitle">Research Lead</div><div class="rnames">Manu H.</div></div>
       </div>
       <div class="rgroup reveal">
-        <div class="rgroup-h"><span class="gname">Software &amp; Research</span><span class="gcount">8</span></div>
+        <div class="rgroup-h"><span class="gname">Software &amp; Research</span><span class="gcount">9</span></div>
         <div class="role-line"><div class="rtitle">Software Engineers</div><div class="rnames">Junaayd S., Adiyan M., Gagan R., Hassan Fakhry</div></div>
         <div class="role-line"><div class="rtitle">Research Consultants</div><div class="rnames">Archith R., Taafeef, Tharun K., Aneesh K., Mihir G.</div></div>
         <div class="rgroup-h"><span class="gname">Operations</span><span class="gcount">5</span></div>
@@ -847,10 +867,280 @@
       <div class="rgroup reveal">
         <div class="rgroup-h"><span class="gname">Marketing &amp; Modeling</span><span class="gcount">11</span></div>
         <div class="role-line"><div class="rtitle">Scripters</div><div class="rnames">Isaac Jiang, Asmitha Ananthan</div></div>
-        <div class="role-line"><div class="rtitle">Video / Editors</div><div class="rnames">Seyon S., Tyler H.</div></div>
+        <div class="role-line"><div class="rtitle">Video Editors</div><div class="rnames">Seyon S., Tyler H.</div></div>
         <div class="role-line"><div class="rtitle">Graphic Designers</div><div class="rnames">Thilan W., Seyon S.</div></div>
         <div class="role-line"><div class="rtitle">Outreach</div><div class="rnames">Carolyn N., Umaima M.</div></div>
-        <div class="role-line"><div class="rtitle">Clip Gatherers</div><div class="rnames">Tyler H., Annie C., Zach G., Harrison O., Vallabha S.</div></div>
+        <div class="role-line"><div class="rtitle">Clip Gatherers</div><div class="rnames">Annie C., Nickolai Noha, Nishanth G., Junaayd S.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEET THE TEAM -->
+  <section class="sec">
+    <div class="sec-head">
+      <div class="label reveal">meet the team</div>
+      <div class="title reveal">The people building SetBuddy, in their own words.</div>
+    </div>
+    <!-- Generated mini sections for each roster member; expand later with photos/bios -->
+    <div class="meet-team">
+      <div class="meet-item reveal">
+        <div class="meet-img"><img src="hassanfakhry.webp" alt="Hassan Fakhry"></div>
+        <div class="meet-text">
+          <div class="meet-name">Hassan Fakhry</div>
+          <div class="meet-role">Founder</div>
+          <p>I'm Hassan, and I founded SetBuddy because around a year ago, when I started working out at home, I injured my back. I tried to find an app that could coach me on form, but couldn't find one that was actually accurate – so I built my own! Outside of work, I’m a Junior at Sunset HS, I enjoy working out, playing Among Us, and arguing with people about topics I don't particularly care about.</p>
+        </div>
+      </div>
+
+      <div class="meet-item reveal">
+        <div class="meet-img"><img src="sherjilk.png" alt="Sherjil Khan"></div>
+        <div class="meet-text">
+          <div class="meet-name">Sherjil Khan</div>
+          <div class="meet-role">Founder</div>
+          <p>Hi, I'm Sherjil, and I founded SetBuddy with my partner Hassan a year ago because I just got into working out at the gym, and needed a reliable way to help coach me through my gym journey and prevent injury. I am a Junior at Sunset, I like to play sports, listen to different types of music, socialize, work out, and eat outside!</p>
+        </div>
+      </div>
+
+      <div class="meet-item reveal">
+        <div class="meet-img"><img src="carolyn.webp" alt="Carolyn N."></div>
+        <div class="meet-text">
+          <div class="meet-name">Carolyn N.</div>
+          <div class="meet-role">Operations Lead / Outreach</div>
+          <p>Hi, I'm Carolyn, a Junior at Sunset High School, serving as Operations Lead and Outreach at SetBuddy. As Operations Lead, I oversee the end-to-end hiring pipeline — working with Group Leads to identify staffing needs, directing Scouters to source candidates, and coordinating Interviewers to close out hires. In Outreach, I build relationships with external partners and mentors, identifying opportunities and representing SetBuddy to support the company's growth and visibility. Outside of Setbuddy, I love to hang out with my friends and get a drink at Sharetea. I do sports such as Track and Field and Swimming.</p>
+        </div>
+      </div>
+
+      <div class="meet-item reveal">
+        <div class="meet-img"><img src="roushilsatta.webp" alt="Roushil Satta"></div>
+        <div class="meet-text">
+          <div class="meet-name">Roushil Satta</div>
+          <div class="meet-role">Software Lead</div>
+          <p><em>"Roushil has already devoted his life to the cause by becoming the Software Lead of SetBuddy. His heart yearns for the Buddy. He may try to escape it with his words. But I do not fear."</em></p>
+        </div>
+      </div>
+
+      <div class="meet-item reveal">
+        <div class="meet-img"><img src="andrew.webp" alt="Andrew"></div>
+        <div class="meet-text">
+          <div class="meet-name">Andrew</div>
+          <div class="meet-role">Marketing Lead</div>
+          <p>Hey, I'm Andrew - I'm the Marketing Lead for SetBuddy. With the help of the team, marketing creates high quality content and media to show the world what SetBuddy is really about. Outside of SetBuddy, I'm a media strategist with 500m+ views in SFC, mixing/mastering engineer, and self improvement enthusiast.</p>
+        </div>
+      </div>
+
+      <div class="meet-item reveal">
+        <div class="meet-img"><img src="manu.webp" alt="Manu H."></div>
+        <div class="meet-text">
+          <div class="meet-name">Manu H.</div>
+          <div class="meet-role">Research Lead</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+
+      <!-- Software & Research -->
+      <div class="meet-item reveal">
+        <div class="meet-img"><img src="jsimg3.png" alt="Junaayd Shaikh"></div>
+        <div class="meet-text">
+          <div class="meet-name">Junaayd Shaikh</div>
+          <div class="meet-role">Full-stack Developer, UI/UX and Sound Engineering</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+
+      <div class="meet-item reveal">
+        <div class="meet-img"><img src="adiyanm.png" alt="Adiyan Musawbir"></div>
+        <div class="meet-text">
+          <div class="meet-name">Adiyan Musawbir</div>
+          <div class="meet-role">Software Engineer</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+
+      <div class="meet-item reveal gagan">
+        <div class="meet-img"><img src="gaganrk.webp" alt="Gagan R."></div>
+        <div class="meet-text">
+          <div class="meet-name">Gagan Reddy Kankara</div>
+          <div class="meet-role">Software Engineer</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+
+      <div class="meet-item reveal">
+        <div class="meet-img"><img src="archithnormal.webp" alt="Archith R."></div>
+        <div class="meet-text">
+          <div class="meet-name">Archith R.</div>
+          <div class="meet-role">Research Consultant</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+
+      <div class="meet-item reveal">
+        <div class="meet-img"><img src="taafeefk.webp" alt="Taafeef K."></div>
+        <div class="meet-text">
+          <div class="meet-name">Taafeef K.</div>
+          <div class="meet-role">Research Consultant</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+
+      <div class="meet-item reveal">
+        <div class="meet-img">Photo</div>
+        <div class="meet-text">
+          <div class="meet-name">Tharun K.</div>
+          <div class="meet-role">Research Consultant</div>
+          <p>Hi, I'm Tharun. I am a Research Consultant at SetBuddy, where I work with the research team to study form breakdowns across different exercises and help develop pseudocode for accurate and useful exercise feedback. Outside of SetBuddy, I enjoy playing soccer, photography, hiking, and hanging out with friends.</p>
+        </div>
+      </div>
+
+      <div class="meet-item reveal aneesh">
+        <div class="meet-img"><img src="aneesh.webp" alt="Aneesh K."></div>
+        <div class="meet-text">
+          <div class="meet-name">Aneesh K.</div>
+          <div class="meet-role">Distinguished Research Consultant</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+
+      
+
+      <!-- Operations -->
+      <div class="meet-item reveal">
+        <div class="meet-img"><img src="anniec.jpg" alt="Annie C."></div>
+        <div class="meet-text">
+          <div class="meet-name">Annie C.</div>
+          <div class="meet-role">Recruiter</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+
+      <div class="meet-item reveal duo">
+        <div class="meet-img"><img src="nishgmihirg.webp" alt="Nish G."></div>
+        <div class="meet-text">
+          <div class="person">
+            <div class="meet-name">Nishanth Gautam</div>
+            <div class="meet-role">Distinguished Recruiter, Clip Gatherer</div>
+            <p>I'm a music producer and jazz pianist and i want to be the next kanye. plus mihir makes me very jolly as you can see. I am a recruiter and clip gatherer, and watching setbuddy grow from a meme in french class last year into a fully built app and amazing team has brought extreme levels of joy to my life and I will be looking forward to devoting the rest of my life to Setbuddy. Outside of setbuddy and music I love to be outside, gym and beatbox drums, preferably house music.</p>
+          </div>
+          <div class="person">
+            <div class="meet-name">Mihir Giani</div>
+            <div class="meet-role">Research Consultant</div>
+            <p>Hi, I’m Mihir. I work as a Research Consultant at SetBuddy, where I help study exercise technique and identify ways to make form analysis more accurate and useful. I also contribute to developing the logic behind SetBuddy’s exercise feedback. Outside of SetBuddy, I enjoy practicing piano, working with ceramics, and exploring my interests in biology and chemistry.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="meet-item reveal">
+        <div class="meet-img">Photo</div>
+        <div class="meet-text">
+          <div class="meet-name">Daniyal M.</div>
+          <div class="meet-role">Recruiter</div>
+          <p>Hi, I'm Daniyal. I work as a Scouter at SetBuddy, where I look for different people for jobs at SetBuddy for positions we need people to work in. I got involved with SetBuddy from my good bud Hassan who has lots of passion for this company. Outside of SetBuddy, I like to hang out with friends, play soccer, or try and learn new skills.  </p>
+        </div>
+      </div>
+
+      <div class="meet-item reveal">
+        <div class="meet-img">Photo</div>
+        <div class="meet-text">
+          <div class="meet-name">Isaac Jiang</div>
+          <div class="meet-role">Interviewer / Scripter</div>
+          <p>Hi, I'm Isaac and I am a SetBuddy interviewer and scripter. Outside of SetBuddy, I enjoy gaming, music, and climbing.</p>
+        </div>
+      </div>
+
+      <div class="meet-item reveal">
+        <div class="meet-img">Photo</div>
+        <div class="meet-text">
+          <div class="meet-name">Krish E.</div>
+          <div class="meet-role">Interviewer</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+
+      <!-- Marketing & Modeling -->
+      <div class="meet-item reveal">
+        <div class="meet-img">Photo</div>
+        <div class="meet-text">
+          <div class="meet-name">Asmitha Ananthan</div>
+          <div class="meet-role">Scripter</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+
+      <div class="meet-item reveal">
+        <div class="meet-img"><img src="seyon.webp" alt="Seyon S."></div>
+        <div class="meet-text">
+          <div class="meet-name">Seyon S.</div>
+          <div class="meet-role">Video Editor</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+
+      <div class="meet-item reveal">
+        <div class="meet-img"><img src="tylerh.webp" alt="Tyler H."></div>
+        <div class="meet-text">
+          <div class="meet-name">Tyler H.</div>
+          <div class="meet-role">Video Editor</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+
+      <div class="meet-item reveal">
+        <div class="meet-img">Photo</div>
+        <div class="meet-text">
+          <div class="meet-name">Thilan W.</div>
+          <div class="meet-role">Graphic Designer</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+
+      <div class="meet-item reveal">
+        <div class="meet-img"><img src="umaima.webp" alt="Umaima M."></div>
+        <div class="meet-text">
+          <div class="meet-name">Umaima M.</div>
+          <div class="meet-role">Outreach</div>
+          <p>Hi I'm Umaima, a junior at Sunset High School and I serve as part of the Outreach team. In this role I have the opportunity to create connections with mentors and voices outside our company in order to grow the app and increase influence on our community. Outside of SetBuddy I enjoy hanging out with friends and spending time in the gym!</p>
+        </div>
+      </div>
+
+      <!-- Zach G. removed temporarily: begin
+      <div class="meet-item reveal">
+        <div class="meet-img">Photo</div>
+        <div class="meet-text">
+          <div class="meet-name">Zach G.</div>
+          <div class="meet-role">Clip Gatherer</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      Zach G. removed temporarily: end -->
+
+      <!-- Harrison O. removed temporarily: begin
+      <div class="meet-item reveal">
+        <div class="meet-img">Photo</div>
+        <div class="meet-text">
+          <div class="meet-name">Harrison O.</div>
+          <div class="meet-role">Clip Gatherer</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      Harrison O. removed temporarily: end -->
+
+      <!-- Vallabha S. removed temporarily: begin
+      <div class="meet-item reveal">
+        <div class="meet-img">Photo</div>
+        <div class="meet-text">
+          <div class="meet-name">Vallabha S.</div>
+          <div class="meet-role">Clip Gatherer</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      Vallabha S. removed temporarily: end -->
+      <div class="meet-item reveal">
+        <div class="meet-img"><img src="nickn.webp" alt="Nickolai Noha"></div>
+        <div class="meet-text">
+          <div class="meet-name">Nickolai Noha</div>
+          <div class="meet-role">Clip Gatherer</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1225,6 +1515,15 @@
   (function(){if(location.hash==='#team'){go('team');}else if(location.hash==='#privacy'){go('privacy');}else if(location.hash==='#support'){go('support');}else if(location.hash==='#promise'){go('promise');}else{runReveal();}})();
 
   window.addEventListener('hashchange',function(){if(location.hash==='#team')go('team');else if(location.hash==='#privacy')go('privacy');else if(location.hash==='#support')go('support');else if(location.hash==='#promise')go('promise');else if(location.hash==='#home')go('home');});
+  (function(){
+    var label=document.getElementById('lnkPrivacyGroup');
+    if(!label) return;
+    var drop=label.parentElement;
+    label.setAttribute('aria-expanded','false');
+    label.addEventListener('click',function(e){e.stopPropagation();var open=drop.classList.toggle('open');label.setAttribute('aria-expanded',open? 'true':'false');});
+    label.addEventListener('keydown',function(e){if(e.key==='Enter' || e.key===' ' || e.key==='Spacebar'){e.preventDefault();label.click();}});
+    document.addEventListener('click',function(e){if(drop.classList.contains('open') && !drop.contains(e.target)){drop.classList.remove('open');label.setAttribute('aria-expanded','false');}});
+  })();
 </script>
 </body>
 </html>
