@@ -269,9 +269,10 @@
   .meet-item:nth-child(even){grid-template-columns:1.4fr 1fr}
   .meet-item:nth-child(even) .meet-img{order:2}
   .meet-item:nth-child(even) .meet-text{order:1}
-  .meet-img{aspect-ratio:1;background:var(--surface-2);border:1px solid var(--line);border-radius:16px;display:flex;align-items:center;justify-content:center;color:var(--muted-2);font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.6px}
+  .meet-img{aspect-ratio:1;background:var(--surface-2);border:1px solid var(--line);border-radius:16px;display:flex;align-items:center;justify-content:center;color:var(--muted-2);font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.6px;overflow:hidden}
   .meet-img img{width:100%;height:100%;object-fit:cover;border-radius:16px;display:block}
   .meet-item.gagan .meet-img img{object-position:center 10%;}
+  .meet-item.sherjil .meet-img img{transform:scale(1.16);transform-origin:80% center}
   .meet-item.aneesh .meet-img img{transform:rotate(270deg);transform-origin:center center}
   .meet-text .person{padding-bottom:10px}
   .meet-text .person + .person{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}
@@ -845,7 +846,7 @@
     </div>
   </section>
 
-  <!-- ROSTER -->
+  <!-- ROSTER: temporarily disabled, the Meet the Team bios below are sufficient
   <section class="sec">
     <div class="sec-head">
       <div class="label reveal">roster</div>
@@ -879,6 +880,7 @@
       </div>
     </div>
   </section>
+  -->
 
   <!-- MEET THE TEAM -->
   <section class="sec">
@@ -892,17 +894,19 @@
         <div class="meet-img"><img src="hassanfakhry.webp" alt="Hassan Fakhry"></div>
         <div class="meet-text">
           <div class="meet-name">Hassan Fakhry</div>
-          <div class="meet-role">Founder</div>
+          <div class="meet-role">Founder, Software Engineer</div>
           <p>I'm Hassan, and I founded SetBuddy because around a year ago, when I started working out at home, I injured my back. I tried to find an app that could coach me on form, but couldn't find one that was actually accurate – so I built my own! Outside of work, I’m a Junior at Sunset HS, I enjoy working out, playing Among Us, and arguing with people about topics I don't particularly care about.</p>
+          <!-- socials temporarily disabled
           <div class="meet-links" aria-label="Hassan social links">
             <div class="social-link"><strong>LinkedIn:</strong> <a class="social-link-a" href="https://www.linkedin.com/in/hassanfakhry/" target="_blank" rel="noopener">https://www.linkedin.com/in/hassanfakhry/</a></div>
             <div class="social-link"><strong>Instagram:</strong> <a class="social-link-a" href="https://www.instagram.com/cornfieldhassan" target="_blank" rel="noopener">https://www.instagram.com/cornfieldhassan</a></div>
           </div>
+          -->
         </div>
       </div>
 
-      <div class="meet-item reveal">
-        <div class="meet-img"><img src="sherjilk.png" alt="Sherjil Khan"></div>
+      <div class="meet-item reveal sherjil">
+        <div class="meet-img"><img src="sherjilk.webp" alt="Sherjil Khan"></div>
         <div class="meet-text">
           <div class="meet-name">Sherjil Khan</div>
           <div class="meet-role">Founder</div>
@@ -913,7 +917,7 @@
       <div class="meet-item reveal">
         <div class="meet-img"><img src="carolyn.webp" alt="Carolyn N."></div>
         <div class="meet-text">
-          <div class="meet-name">Carolyn N.</div>
+          <div class="meet-name">Carolyn Nguyen</div>
           <div class="meet-role">Operations Lead / Outreach</div>
           <p>Hi, I'm Carolyn, a Junior at Sunset High School, serving as Operations Lead and Outreach at SetBuddy. As Operations Lead, I oversee the end-to-end hiring pipeline — working with Group Leads to identify staffing needs, directing Scouters to source candidates, and coordinating Interviewers to close out hires. In Outreach, I build relationships with external partners and mentors, identifying opportunities and representing SetBuddy to support the company's growth and visibility. Outside of Setbuddy, I love to hang out with my friends and get a drink at Sharetea. I do sports such as Track and Field and Swimming.</p>
         </div>
@@ -943,18 +947,20 @@
           <div class="meet-name">Manu Harikrishna</div>
           <div class="meet-role">Research Lead</div>
           <p>My name is Manu, and I am a junior in high school. As Research Lead, I research exercises to be used by SetBuddy, serve as the bridge between the Software and Research teams, and get to be in charge of 5 researchers. Outside of SetBuddy, I like to read, make and eat food, listen to music, and discuss topics I have no reason to discuss. I also actively contribute to taking care of my community.</p>
+          <!-- socials temporarily disabled
           <div class="meet-links" aria-label="Manu social links">
             <div class="social-link"><strong>LinkedIn:</strong> <a class="social-link-a" href="https://www.linkedin.com/in/manu-harikrishna-b068972b0" target="_blank" rel="noopener">https://www.linkedin.com/in/manu-harikrishna-b068972b0</a></div>
           </div>
+          -->
         </div>
       </div>
 
       <!-- Software & Research -->
       <div class="meet-item reveal">
-        <div class="meet-img"><img src="jsimg3.png" alt="Junaayd Shaikh"></div>
+        <div class="meet-img"><img src="jsimgdeepfry.jpg" alt="Junaayd Shaikh"></div>
         <div class="meet-text">
           <div class="meet-name">Junaayd Shaikh</div>
-          <div class="meet-role">Full-stack Developer, UI/UX and Sound Engineering</div>
+          <div class="meet-role">Full-stack Developer, Sound Engineering</div>
           <p>Hi, I'm Junaayd, and I'm a freshman in high school. I'm a full-stack and AI/ML software developer, as well as a designer for the UX elements you'll see in SetBuddy products. Some of the main things I work on with UX include various soundscapes and sound effects me and Nishanth create! Outside of SetBuddy, I enjoy tech, making beats, and content creation!</p>
         </div>
       </div>
@@ -964,7 +970,8 @@
         <div class="meet-text">
           <div class="meet-name">Adiyan Musawbir</div>
           <div class="meet-role">Full-stack Developer</div>
-          <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+          <!-- TEMPORARY: role-based placeholder bio, replace with Adiyan's own description when provided -->
+          <p>Adiyan is a Full-stack Developer at SetBuddy, building and shipping features across the mobile app and analysis pipeline. He contributes to the analysis, judgement and scoring model for SetBuddy, as well as works on UI design and implementation.</p>
         </div>
       </div>
 
@@ -980,16 +987,17 @@
       <div class="meet-item reveal">
         <div class="meet-img"><img src="archithnormal.webp" alt="Archith R."></div>
         <div class="meet-text">
-          <div class="meet-name">Archith R.</div>
+          <div class="meet-name">Archith Rajesh</div>
           <div class="meet-role">Research Consultant</div>
-          <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+          <!-- TEMPORARY: role-based placeholder bio, replace with Archith's own description when provided -->
+          <p>Archith is a Research Consultant at SetBuddy, researching exercise form issues and helping write the logic behind SetBuddy's feedback.</p>
         </div>
       </div>
 
       <div class="meet-item reveal">
         <div class="meet-img"><img src="taafeefk.webp" alt="Taafeef K."></div>
         <div class="meet-text">
-          <div class="meet-name">Taafeef K.</div>
+          <div class="meet-name">Taafeef Khayer</div>
           <div class="meet-role">Research Consultant</div>
           <p>My name's Taafeef and I'm 18 years old. I research exercises to be used within the SetBuddy AI model. Outside of SetBuddy, I like to workout, play soccer, and hang out with friends.</p>
         </div>
@@ -998,7 +1006,7 @@
       <div class="meet-item reveal">
         <div class="meet-img"><img src="tharun.webp" alt="Tharun K."></div>
         <div class="meet-text">
-          <div class="meet-name">Tharun K.</div>
+          <div class="meet-name">Tharun Karthick</div>
           <div class="meet-role">Research Consultant</div>
           <p>Hi, I'm Tharun. I am a Research Consultant at SetBuddy, where I work with the research team to study form breakdowns across different exercises and help develop pseudocode for accurate and useful exercise feedback. Outside of SetBuddy, I enjoy playing soccer, photography, hiking, and hanging out with friends.</p>
         </div>
@@ -1019,7 +1027,7 @@
       <div class="meet-item reveal">
         <div class="meet-img"><img src="anniec.jpg" alt="Annie C."></div>
         <div class="meet-text">
-          <div class="meet-name">Annie C.</div>
+          <div class="meet-name">Annie Chhabbi</div>
           <div class="meet-role">Recruiter</div>
           <p>I’m a sophomore in high school who loves taekwondo, theatre, singing, dancing, writing, and creating videos. I also enjoy getting involved in my community!</p>
         </div>
@@ -1030,7 +1038,7 @@
         <div class="meet-text">
           <div class="person">
             <div class="meet-name">Nishanth Gautam</div>
-            <div class="meet-role">Distinguished Recruiter, Clip Gatherer</div>
+            <div class="meet-role">Distinguished Recruiter, Clip Gatherer, Sound Engineering</div>
             <p>I am a recruiter and clip gatherer, and watching SetBuddy grow from a meme in French class last year into a fully built app and amazing team has brought extreme levels of joy to my life and I will be looking forward to devoting the rest of my life to SetBuddy. Outside of SetBuddy and music I love to be outside, gym and beatbox drums, preferably house music.</p>
           </div>
           <div class="person">
@@ -1044,7 +1052,7 @@
       <div class="meet-item reveal">
         <div class="meet-img"><img src="daniyal.webp" alt="Daniyal M."></div>
         <div class="meet-text">
-          <div class="meet-name">Daniyal M.</div>
+          <div class="meet-name">Daniyal Mukadam</div>
           <div class="meet-role">Recruiter</div>
           <p>Hi, I'm Daniyal. I work as a Scouter at SetBuddy, where I look for different people for jobs at SetBuddy for positions we need people to work in. I got involved with SetBuddy from my good bud Hassan who has lots of passion for this company. Outside of SetBuddy, I like to hang out with friends, play soccer, or try and learn new skills.  </p>
         </div>
@@ -1060,11 +1068,11 @@
       </div>
 
       <div class="meet-item reveal">
-        <div class="meet-img">Photo</div>
+        <div class="meet-img"><img src="krish.webp" alt="Krish Eepuri"></div>
         <div class="meet-text">
-          <div class="meet-name">Krish E.</div>
+          <div class="meet-name">Krish Eepuri</div>
           <div class="meet-role">Interviewer</div>
-          <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+          <p>Hi I’m Krish and I am a SetBuddy interviewer. I’m here to help SetBuddy become a successful app empowering others in there workout journey. I also enjoy gaming, music, hiking, and swimming.</p>
         </div>
       </div>
 
@@ -1090,7 +1098,7 @@
       <div class="meet-item reveal">
         <div class="meet-img"><img src="tylerh.webp" alt="Tyler H."></div>
         <div class="meet-text">
-          <div class="meet-name">Tyler H.</div>
+          <div class="meet-name">Tyler Hwang</div>
           <div class="meet-role">Video Editor</div>
           <p>My name is Tyler, I am a video editor at SetBuddy. In my spare time I like to do photography, play volleyball, and eat good food.</p>
         </div>
@@ -1101,14 +1109,15 @@
         <div class="meet-text">
           <div class="meet-name">Thilan Wijeratne</div>
           <div class="meet-role">Graphic Designer</div>
-          <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+          <!-- TEMPORARY: role-based placeholder bio, replace with Thilan's own description when provided -->
+          <p>Thilan is a Graphic Designer at SetBuddy, designing the visual assets — social posts, banners, and app graphics — that represent the brand.</p>
         </div>
       </div>
 
       <div class="meet-item reveal">
         <div class="meet-img"><img src="umaima.webp" alt="Umaima M."></div>
         <div class="meet-text">
-          <div class="meet-name">Umaima M.</div>
+          <div class="meet-name">Umaima Madraswala</div>
           <div class="meet-role">Outreach</div>
           <p>Hi I'm Umaima, a junior at Sunset High School and I serve as part of the Outreach team. In this role I have the opportunity to create connections with mentors and voices outside our company in order to grow the app and increase influence on our community. Outside of SetBuddy I enjoy hanging out with friends and spending time in the gym!</p>
         </div>
@@ -1140,7 +1149,7 @@
       <div class="meet-item reveal">
         <div class="meet-img">Photo</div>
         <div class="meet-text">
-          <div class="meet-name">Vallabha S.</div>
+          <div class="meet-name">Vallabha Srikanth</div>
           <div class="meet-role">Clip Gatherer</div>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
