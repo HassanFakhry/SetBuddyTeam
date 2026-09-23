@@ -99,7 +99,6 @@
   .nav-drop-menu a.on{color:var(--orange)}
   .nav-drop-menu a.on::after{content:none}
 
-
   /* ---------- buttons ---------- */
   .btn-primary{display:inline-flex;align-items:center;gap:9px;font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:0.4px;text-decoration:none;background:var(--orange);color:#fff;padding:15px 26px;border-radius:8px;border:1px solid var(--orange);transition:background .18s,transform .18s}
   .btn-primary:hover{background:var(--orange-deep);transform:translateY(-2px)}
@@ -278,6 +277,26 @@
   .meet-text .person + .person{border-top:1px solid var(--line);padding-top:14px;margin-top:14px}
   .meet-name{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(24px,2.6vw,32px);letter-spacing:-0.6px;margin-bottom:8px}
   .meet-role{font-family:'Space Mono',monospace;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.6px;color:var(--orange);margin-bottom:16px}
+  .meet-prog{
+    list-style:none;margin:-6px 0 18px;padding:2px 0 2px 18px;position:relative;
+    font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.3px;color:var(--muted-2)
+  }
+  .meet-prog::before{content:"";position:absolute;left:3px;top:10px;bottom:12px;width:1px;background:var(--line)}
+  .meet-prog li{position:relative;padding:0 0 11px}
+  .meet-prog li:last-child{padding-bottom:0}
+  .meet-prog li::before{
+    content:"";position:absolute;left:-18px;top:4px;width:7px;height:7px;border-radius:50%;
+    background:var(--surface);border:1.5px solid var(--line);box-sizing:border-box
+  }
+  .meet-prog .r{text-transform:uppercase;letter-spacing:.5px;font-weight:700;color:var(--muted)}
+  .meet-prog .d{display:block;margin-top:2px;font-size:10.5px;color:var(--muted-2);letter-spacing:.2px}
+  .meet-prog li.now .r{color:var(--text)}
+  .meet-prog li.now::before{background:var(--orange);border-color:var(--orange)}
+  .meet-prog .badge{
+    display:inline-block;margin-left:7px;padding:1px 6px 2px;border-radius:999px;
+    font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;
+    color:var(--gold);border:1px solid var(--gold);vertical-align:1px;white-space:nowrap
+  }
   .meet-text p{font-size:16px;color:var(--muted);line-height:1.75;max-width:42em}
 
   /* open roles accordion */
@@ -919,6 +938,7 @@
         <div class="meet-text">
           <div class="meet-name">Carolyn Nguyen</div>
           <div class="meet-role">Operations Lead / Outreach</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Operations Lead</span><span class="d">Jul 22, 2026</span></li><li><span class="r">Outreach</span><span class="d">May 16, 2026</span></li></ul>
           <p>Hi, I'm Carolyn, a Junior at Sunset High School, serving as Operations Lead and Outreach at SetBuddy. As Operations Lead, I oversee the end-to-end hiring pipeline — working with Group Leads to identify staffing needs, directing Scouters to source candidates, and coordinating Interviewers to close out hires. In Outreach, I build relationships with external partners and mentors, identifying opportunities and representing SetBuddy to support the company's growth and visibility. Outside of Setbuddy, I love to hang out with my friends and get a drink at Sharetea. I do sports such as Track and Field and Swimming.</p>
         </div>
       </div>
@@ -928,6 +948,7 @@
         <div class="meet-text">
           <div class="meet-name">Roushil Satta</div>
           <div class="meet-role">Software Technical Advisor</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Software Technical Advisor</span><span class="d">Sep 21, 2026</span></li><li><span class="r">Software Lead</span><span class="d">May 16, 2026</span></li></ul>
           <p><em>"Roushil has already devoted his life to the cause by becoming the Software Technical Advisor of SetBuddy. His heart yearns for the Buddy. He may try to escape it with his words. But I do not fear."</em></p>
         </div>
       </div>
@@ -936,8 +957,9 @@
         <div class="meet-img"><img src="1775420303770.jpeg" alt="Nishanth Gautam"></div>
         <div class="meet-text">
           <div class="meet-name">Nishanth Gautam</div>
-          <div class="meet-role">Software Project Lead, Recruiter, Clip Gatherer, Sound Engineering</div>
-          <p>I am a recruiter and clip gatherer, and watching SetBuddy grow from a meme in French class last year into a fully built app and amazing team has brought extreme levels of joy to my life and I will be looking forward to devoting the rest of my life to SetBuddy. Outside of SetBuddy and music I love to be outside, gym and beatbox drums, preferably house music.</p>
+          <div class="meet-role">Software Project Lead, Recruiter</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Software Project Lead</span><span class="d">Sep 21, 2026</span></li><li><span class="r">Recruiter</span><span class="badge">Distinguished</span><span class="d">Aug 24, 2026</span></li><li><span class="r">Recruiter</span><span class="d">May 12, 2026</span></li></ul>
+          <p>I started out as a recruiter, and watching SetBuddy grow from a meme in French class last year into a fully built app and amazing team has brought extreme levels of joy to my life and I will be looking forward to devoting the rest of my life to SetBuddy. Outside of SetBuddy and music I love to be outside, gym and beatbox drums, preferably house music.</p>
         </div>
       </div>
 
@@ -946,7 +968,18 @@
         <div class="meet-text">
           <div class="meet-name">Andrew</div>
           <div class="meet-role">Marketing Expert</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Marketing Expert</span><span class="d">Sep 23, 2026</span></li><li><span class="r">Marketing Lead</span><span class="d">May 16, 2026</span></li></ul>
           <p>Hey, I'm Andrew - I'm the Marketing Expert for SetBuddy. With the help of the team, marketing creates high quality content and media to show the world what SetBuddy is really about. Outside of SetBuddy, I'm a media strategist with 500m+ views in SFC, mixing/mastering engineer, and self improvement enthusiast.</p>
+        </div>
+      </div>
+
+      <div class="meet-item reveal aneesh">
+        <div class="meet-img"><img src="aneesh.webp" alt="Aneesh K."></div>
+        <div class="meet-text">
+          <div class="meet-name">Aneesh Kulkarni</div>
+          <div class="meet-role">Marketing Project Lead</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Marketing Project Lead</span><span class="d">Sep 23, 2026</span></li><li><span class="r">Research Consultant</span><span class="badge">Distinguished</span><span class="d">Aug 24, 2026</span></li><li><span class="r">Research Consultant</span><span class="d">May 16, 2026</span></li></ul>
+          <p>Hi, I'm Aneesh. I'm the Marketing Project Lead at SetBuddy, running the content pipeline end to end so a video and a slideshow go out every week. I came up through research, where I was named a Distinguished Research Consultant, and I still research form breakdowns of several different exercises, and help write pseudocode to help users achieve the optimal form. Outside of Setbuddy, I enjoy playing basketball, going to the gym, and making all kinds of food. </p>
         </div>
       </div>
 
@@ -955,6 +988,7 @@
         <div class="meet-text">
           <div class="meet-name">Manu Harikrishna</div>
           <div class="meet-role">Research Lead</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Research Lead</span><span class="d">May 16, 2026</span></li></ul>
           <p>My name is Manu, and I am a junior in high school. As Research Lead, I research exercises to be used by SetBuddy, serve as the bridge between the Software and Research teams, and get to be in charge of 5 researchers. Outside of SetBuddy, I like to read, make and eat food, listen to music, and discuss topics I have no reason to discuss. I also actively contribute to taking care of my community.</p>
           <!-- socials temporarily disabled
           <div class="meet-links" aria-label="Manu social links">
@@ -970,6 +1004,7 @@
         <div class="meet-text">
           <div class="meet-name">Junaayd Shaikh</div>
           <div class="meet-role">Full-stack Developer, Sound Engineering</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Full-stack Developer, Sound Engineering</span><span class="d">May 16, 2026</span></li></ul>
           <p>Hi, I'm Junaayd, and I'm a freshman in high school. I'm a full-stack and AI/ML software developer, as well as a designer for the UX elements you'll see in SetBuddy products. Some of the main things I work on with UX include various soundscapes and sound effects me and Nishanth create! Outside of SetBuddy, I enjoy tech, making beats, and content creation!</p>
         </div>
       </div>
@@ -979,6 +1014,7 @@
         <div class="meet-text">
           <div class="meet-name">Adiyan Musawbir</div>
           <div class="meet-role">Full-stack Developer</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Full-stack Developer</span><span class="d">May 16, 2026</span></li></ul>
           <!-- TEMPORARY: role-based placeholder bio, replace with Adiyan's own description when provided -->
           <p>Adiyan is a Full-stack Developer at SetBuddy, building and shipping features across the mobile app and analysis pipeline. He contributes to the analysis, judgement and scoring model for SetBuddy, as well as works on UI design and implementation.</p>
         </div>
@@ -989,6 +1025,7 @@
         <div class="meet-text">
           <div class="meet-name">Gagan Reddy Kankara</div>
           <div class="meet-role">Software Engineer</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Software Engineer</span><span class="d">Jul 22, 2026</span></li></ul>
           <p>I’m Gagan Reddy Kankara, a member of the SetBuddy team with an interest in technology, problem-solving, and building useful products. I bring experience from game development, speech and debate, and volunteering, which have strengthened my communication, creativity, and teamwork. Outside of SetBuddy, I enjoy learning, soccer, and track and field.</p>
         </div>
       </div>
@@ -998,6 +1035,7 @@
         <div class="meet-text">
           <div class="meet-name">Archith Rajesh</div>
           <div class="meet-role">Research Consultant</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Research Consultant</span><span class="d">May 16, 2026</span></li></ul>
           <!-- TEMPORARY: role-based placeholder bio, replace with Archith's own description when provided -->
           <p>Archith is a Research Consultant at SetBuddy, researching exercise form issues and helping write the logic behind SetBuddy's feedback.</p>
         </div>
@@ -1008,6 +1046,7 @@
         <div class="meet-text">
           <div class="meet-name">Taafeef Khayer</div>
           <div class="meet-role">Research Consultant</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Research Consultant</span><span class="d">May 20, 2026</span></li></ul>
           <p>My name's Taafeef and I'm 18 years old. I research exercises to be used within the SetBuddy AI model. Outside of SetBuddy, I like to workout, play soccer, and hang out with friends.</p>
         </div>
       </div>
@@ -1017,20 +1056,11 @@
         <div class="meet-text">
           <div class="meet-name">Tharun Karthick</div>
           <div class="meet-role">Research Consultant</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Research Consultant</span><span class="d">May 17, 2026</span></li></ul>
           <p>Hi, I'm Tharun. I am a Research Consultant at SetBuddy, where I work with the research team to study form breakdowns across different exercises and help develop pseudocode for accurate and useful exercise feedback. Outside of SetBuddy, I enjoy playing soccer, photography, hiking, and hanging out with friends.</p>
         </div>
       </div>
 
-      <div class="meet-item reveal aneesh">
-        <div class="meet-img"><img src="aneesh.webp" alt="Aneesh K."></div>
-        <div class="meet-text">
-          <div class="meet-name">Aneesh Kulkarni</div>
-          <div class="meet-role">Distinguished Research Consultant</div>
-          <p>Hi, I'm Aneesh. I am a research consultant at SetBuddy. Along with the rest of the research department, I research form breakdowns of several different exercises, and help write pseudocode to help users achieve the optimal form. Outside of Setbuddy, I enjoy playing basketball, going to the gym, and making all kinds of food. </p>
-        </div>
-      </div>
-
-      
 
       <!-- Operations -->
       <div class="meet-item reveal">
@@ -1038,6 +1068,7 @@
         <div class="meet-text">
           <div class="meet-name">Annie Chhabbi</div>
           <div class="meet-role">Recruiter</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Recruiter</span><span class="d">Jul 16, 2026</span></li></ul>
           <p>I’m a sophomore in high school who loves taekwondo, theatre, singing, dancing, writing, and creating videos. I also enjoy getting involved in my community!</p>
         </div>
       </div>
@@ -1045,11 +1076,10 @@
       <div class="meet-item reveal">
         <div class="meet-img"><img src="1774150566313.jpeg" alt="Mihir G."></div>
         <div class="meet-text">
-          <div class="person">
-            <div class="meet-name">Mihir Giani</div>
+          <div class="meet-name">Mihir Giani</div>
             <div class="meet-role">Research Consultant</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Research Consultant</span><span class="d">May 16, 2026</span></li></ul>
             <p>Hi, I’m Mihir. I work as a Research Consultant at SetBuddy, where I help study exercise technique and identify ways to make form analysis more accurate and useful. I also contribute to developing the logic behind SetBuddy’s exercise feedback. Outside of SetBuddy, I enjoy practicing piano, working with ceramics, and exploring my interests in biology and chemistry.</p>
-          </div>
         </div>
       </div>
 
@@ -1058,6 +1088,7 @@
         <div class="meet-text">
           <div class="meet-name">Daniyal Mukadam</div>
           <div class="meet-role">Recruiter</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Recruiter</span><span class="d">May 16, 2026</span></li></ul>
           <p>Hi, I'm Daniyal. I work as a Scouter at SetBuddy, where I look for different people for jobs at SetBuddy for positions we need people to work in. I got involved with SetBuddy from my good bud Hassan who has lots of passion for this company. Outside of SetBuddy, I like to hang out with friends, play soccer, or try and learn new skills.  </p>
         </div>
       </div>
@@ -1067,6 +1098,7 @@
         <div class="meet-text">
           <div class="meet-name">Isaac Jiang</div>
           <div class="meet-role">Interviewer / Scripter</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Interviewer / Scripter</span><span class="d">May 25, 2026</span></li></ul>
           <p>Hi, I'm Isaac and I am a SetBuddy interviewer and scripter. Outside of SetBuddy, I enjoy gaming, music, and climbing.</p>
         </div>
       </div>
@@ -1076,16 +1108,29 @@
         <div class="meet-text">
           <div class="meet-name">Krish Eepuri</div>
           <div class="meet-role">Interviewer</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Interviewer</span><span class="d">Jul 15, 2026</span></li></ul>
           <p>Hi I’m Krish and I am a SetBuddy interviewer. I’m here to help SetBuddy become a successful app empowering others in there workout journey. I also enjoy gaming, music, hiking, and swimming.</p>
         </div>
       </div>
 
       <!-- Marketing & Modeling -->
       <div class="meet-item reveal">
+        <div class="meet-img"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20400%22%3E%3Crect%20width%3D%22400%22%20height%3D%22400%22%20fill%3D%22%23dedcd3%22%2F%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22158%22%20r%3D%2260%22%20fill%3D%22%23c5c2b6%22%2F%3E%3Cpath%20d%3D%22M82%20362c0-65%2053-118%20118-118s118%2053%20118%20118z%22%20fill%3D%22%23c5c2b6%22%2F%3E%3C%2Fsvg%3E" alt="Siva (photo coming soon)"></div>
+        <div class="meet-text">
+          <div class="meet-name">Siva</div>
+          <div class="meet-role">Scripter</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Scripter</span><span class="d">Aug 28, 2026</span></li></ul>
+          <!-- TEMPORARY: anonymous placeholder photo + role-based bio, replace with Siva's own photo and description when provided -->
+          <p>Siva is a Scripter at SetBuddy, writing the scripts our videos and slideshows are built from.</p>
+        </div>
+      </div>
+
+      <div class="meet-item reveal">
         <div class="meet-img"><img src="seyon.webp" alt="Seyon Selvakumar"></div>
         <div class="meet-text">
           <div class="meet-name">Seyon Selvakumar</div>
           <div class="meet-role">Video Editor, Graphic Designer</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Video Editor, Graphic Designer</span><span class="d">May 16, 2026</span></li></ul>
           <p>Hey, I’m Seyon. I joined SetBuddy because I was bored. Outside of SetBuddy, I like to hangout with friends and work on projects.</p>
         </div>
       </div>
@@ -1095,6 +1140,7 @@
         <div class="meet-text">
           <div class="meet-name">Tyler Hwang</div>
           <div class="meet-role">Video Editor</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Video Editor</span><span class="d">May 16, 2026</span></li></ul>
           <p>My name is Tyler, I am a video editor at SetBuddy. In my spare time I like to do photography, play volleyball, and eat good food.</p>
         </div>
       </div>
@@ -1104,6 +1150,7 @@
         <div class="meet-text">
           <div class="meet-name">Thilan Wijeratne</div>
           <div class="meet-role">Graphic Designer</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Graphic Designer</span><span class="d">May 18, 2026</span></li></ul>
           <!-- TEMPORARY: role-based placeholder bio, replace with Thilan's own description when provided -->
           <p>Thilan is a Graphic Designer at SetBuddy, designing the visual assets — social posts, banners, and app graphics — that represent the brand.</p>
         </div>
@@ -1114,6 +1161,7 @@
         <div class="meet-text">
           <div class="meet-name">Umaima Madraswala</div>
           <div class="meet-role">Outreach</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Outreach</span><span class="d">May 16, 2026</span></li></ul>
           <p>Hi I'm Umaima, a junior at Sunset High School and I serve as part of the Outreach team. In this role I have the opportunity to create connections with mentors and voices outside our company in order to grow the app and increase influence on our community. Outside of SetBuddy I enjoy hanging out with friends and spending time in the gym!</p>
         </div>
       </div>
@@ -1155,6 +1203,7 @@
         <div class="meet-text">
           <div class="meet-name">Nickolai Noha</div>
           <div class="meet-role">Clip Gatherer</div>
+          <ul class="meet-prog" aria-label="Role progression"><li class="now"><span class="r">Clip Gatherer</span><span class="d">Aug 8, 2026</span></li></ul>
           <p>I’m Nickolai, I am a clip-gatherer at SetBuddy. I am very passionate about getting people the help they need to achieve the best version of themselves. I play hockey and music as well.</p>
         </div>
       </div>
@@ -1315,7 +1364,6 @@
         <li><strong>Google Play Billing &amp; Apple App Store billing</strong>: process and verify purchases on Android and iOS respectively.</li>
       </ul>
       <p>These providers process data under their own privacy policies. We do not sell your personal information.</p>
-
 
       <h2>Data retention and deletion</h2>
       <p>We keep your account and workout data until you delete it. You can delete your account at any time from within the app, which removes your profile, workout history, analysis history, and associated data from our systems. Uploaded videos used for analysis are processed to produce your results; rep clips are retained only when your plan includes saved rep videos, and you can remove them. To request deletion or ask a data question, email <a href="mailto:setbuddyhelp@gmail.com">setbuddyhelp@gmail.com</a>.</p>
