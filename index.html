@@ -293,10 +293,29 @@
   .meet-prog li.now .r{color:var(--text)}
   .meet-prog li.now::before{background:var(--orange);border-color:var(--orange)}
   .meet-prog .badge{
-    display:inline-block;margin-left:7px;padding:1px 6px 2px;border-radius:999px;
+    position:relative;display:inline-block;margin-left:7px;padding:1px 6px 2px;border-radius:999px;
     font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;
-    color:var(--gold);border:1px solid var(--gold);vertical-align:1px;white-space:nowrap
+    color:var(--gold);border:1px solid var(--gold);vertical-align:1px;white-space:nowrap;
+    cursor:help;outline:none
   }
+  .meet-prog .badge::after{
+    content:attr(data-tip);position:absolute;left:0;top:calc(100% + 9px);z-index:40;
+    width:max-content;max-width:min(260px,72vw);padding:9px 12px;border-radius:6px;
+    background:var(--panel);color:var(--panel-muted);border:1px solid var(--panel-line);
+    font-family:-apple-system,'Segoe UI',Roboto,sans-serif;font-size:12px;font-weight:400;
+    letter-spacing:0;text-transform:none;line-height:1.5;white-space:normal;text-align:left;
+    opacity:0;transform:translateY(-3px);pointer-events:none;
+    transition:opacity .15s ease,transform .15s ease
+  }
+  .meet-prog .badge::before{
+    content:"";position:absolute;left:14px;top:calc(100% + 4px);z-index:41;
+    border:5px solid transparent;border-bottom-color:var(--panel-line);
+    opacity:0;pointer-events:none;transition:opacity .15s ease
+  }
+  .meet-prog .badge:hover::after,.meet-prog .badge:focus::after,
+  .meet-prog .badge:hover::before,.meet-prog .badge:focus::before{opacity:1;transform:translateY(0)}
+  .meet-prog li{overflow:visible}
+  @media (max-width:520px){.meet-prog .badge::after{left:auto;right:0}.meet-prog .badge::before{left:auto;right:14px}}
   .meet-text p{font-size:16px;color:var(--muted);line-height:1.75;max-width:42em}
 
   /* open roles accordion */
@@ -958,7 +977,7 @@
         <div class="meet-text">
           <div class="meet-name">Nishanth Gautam</div>
           <div class="meet-role">Software Project Lead, Recruiter</div>
-          <ul class="meet-prog" aria-label="Roles"><li class="now"><span class="r">Software Project Lead</span><span class="d">Sep 21, 2026</span></li><li class="now"><span class="r">Recruiter</span><span class="badge">Distinguished &middot; Aug 24, 2026</span><span class="d">May 12, 2026</span></li></ul>
+          <ul class="meet-prog" aria-label="Roles"><li class="now"><span class="r">Software Project Lead</span><span class="d">Sep 21, 2026</span></li><li class="now"><span class="r">Recruiter</span><span class="badge" tabindex="0" role="note" data-tip="Distinguished is recognition for work well beyond what the role asks for. Awarded individually, not by seniority or time on the team." aria-label="Distinguished — Aug 24, 2026. Distinguished is recognition for work well beyond what the role asks for. Awarded individually, not by seniority or time on the team.">Distinguished &middot; Aug 24, 2026</span><span class="d">Apr 15, 2026</span></li></ul>
           <p>I started out as a recruiter, and watching SetBuddy grow from a meme in French class last year into a fully built app and amazing team has brought extreme levels of joy to my life and I will be looking forward to devoting the rest of my life to SetBuddy. Outside of SetBuddy and music I love to be outside, gym and beatbox drums, preferably house music.</p>
         </div>
       </div>
@@ -978,7 +997,7 @@
         <div class="meet-text">
           <div class="meet-name">Aneesh Kulkarni</div>
           <div class="meet-role">Marketing Project Lead, Research Consultant</div>
-          <ul class="meet-prog" aria-label="Roles"><li class="now"><span class="r">Marketing Project Lead</span><span class="d">Sep 23, 2026</span></li><li class="now"><span class="r">Research Consultant</span><span class="badge">Distinguished &middot; Aug 24, 2026</span><span class="d">May 16, 2026</span></li></ul>
+          <ul class="meet-prog" aria-label="Roles"><li class="now"><span class="r">Marketing Project Lead</span><span class="d">Sep 23, 2026</span></li><li class="now"><span class="r">Research Consultant</span><span class="badge" tabindex="0" role="note" data-tip="Distinguished is recognition for work well beyond what the role asks for. Awarded individually, not by seniority or time on the team." aria-label="Distinguished — Aug 24, 2026. Distinguished is recognition for work well beyond what the role asks for. Awarded individually, not by seniority or time on the team.">Distinguished &middot; Aug 24, 2026</span><span class="d">May 16, 2026</span></li></ul>
           <p>Hi, I'm Aneesh. I'm the Marketing Project Lead at SetBuddy, running the content pipeline end to end so a video and a slideshow go out every week. I came up through research, where I was named a Distinguished Research Consultant, and I still research form breakdowns of several different exercises, and help write pseudocode to help users achieve the optimal form. Outside of Setbuddy, I enjoy playing basketball, going to the gym, and making all kinds of food. </p>
         </div>
       </div>
